@@ -63,6 +63,7 @@ function SearchBar() {
           </label>
           <DatePicker
             selected={checkinDate}
+            placeholderText='Select Check-in Date'
             onChange={(date) => setCheckinDate(date)}
             className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -75,6 +76,7 @@ function SearchBar() {
           </label>
           <DatePicker
             selected={checkoutDate}
+            placeholderText='Select Check-out Date'
             onChange={(date) => setCheckoutDate(date)}
             className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
