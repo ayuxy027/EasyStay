@@ -1,5 +1,6 @@
 import SignupImage from '../images/SignUp.png';
 import Logo from '../images/Logo.png';
+import { Link } from 'react-router-dom';
 
 // This Page Appears when the user clicks on the SignUp button on the Navbar
 
