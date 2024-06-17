@@ -1,8 +1,9 @@
+import React, { useState } from 'react';
 import { FaSearch, FaCalendarAlt, FaUser } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const SearchBar = () => {
+function SearchBar() {
   const [location, setLocation] = useState('');
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [checkinDate, setCheckinDate] = useState(null);
@@ -11,7 +12,6 @@ const SearchBar = () => {
   const [showCheckoutDatePicker, setShowCheckoutDatePicker] = useState(false);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [infants, setInfants] = useState(0);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
 
   const handleGuestChange = (type, action) => {
@@ -19,8 +19,6 @@ const SearchBar = () => {
       setAdults(action === 'increment' ? adults + 1 : adults - 1);
     } else if (type === 'children') {
       setChildren(action === 'increment' ? children + 1 : children - 1);
-    } else if (type === 'infants') {
-      setInfants(action === 'increment' ? infants + 1 : infants - 1);
     }
   };
 
@@ -88,7 +86,7 @@ const SearchBar = () => {
             <FaUser className="mr-2" /> Guests
           </label>
           <div onClick={() => setShowGuestDropdown(!showGuestDropdown)} className="w-full p-4 border border-gray-300 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
-            {`Adults: ${adults}, Children: ${children}, Infants: ${infants}`}
+            {`Adults:${adults} Children:${children}`}
           </div>
           {showGuestDropdown && (
             <div className="absolute z-10 w-full p-4 mt-1 bg-white border border-gray-300 rounded-xl">
@@ -130,25 +128,6 @@ const SearchBar = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-between p-2 hover:bg-gray-200">
-                <span>Infants</span>
-                <div className="flex items-center">
-                  <button
-                    className="p-2 bg-gray-300 rounded-full"
-                    onClick={() => handleGuestChange('infants', 'decrement')}
-                    disabled={infants === 0}
-                  >
-                    -
-                  </button>
-                  <span className="mx-4">{infants}</span>
-                  <button
-                    className="p-2 bg-gray-300 rounded-full"
-                    onClick={() => handleGuestChange('infants', 'increment')}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
               <div className="flex justify-end mt-4">
                 <button
                   className="p-2 text-white bg-blue-500 rounded-2xl"
@@ -163,6 +142,6 @@ const SearchBar = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SearchBar;
