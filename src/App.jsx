@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import NavBar from "./components/NavBar";
+import SearchBar from "./components/SearchBar.jsx";
+import NavBar from "./components/NavBar.jsx";
 import HomePage from "./pages/HomePage.jsx"; 
 import SignUp from "./components/SignUp.jsx";
 import { Route,Routes } from "react-router-dom";
