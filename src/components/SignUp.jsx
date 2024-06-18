@@ -19,13 +19,13 @@ function SignUp() {
               <div className="max-w-xs mx-auto">
                 <input
                   className="w-full px-8 py-4 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="email" placeholder="xyz@gmail.com" />
+                  type="email" placeholder="xyz@gmail.com" required />
                 <input
                   className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="password" placeholder="Password" />
+                  type="password" placeholder="Password" required />
                 <input
                   className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="password" placeholder="Re-Enter Password" />
+                  type="password" placeholder="Re-Enter Password" required />
                 <button
                   className="flex items-center justify-center w-full py-4 mt-5 mb-8 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out bg-blue-500 rounded-lg hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
                   <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
