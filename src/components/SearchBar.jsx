@@ -25,11 +25,16 @@ function SearchBar() {
   };
 
   const handleCheckinDateChange = (date) => {
-    setCheckinDate(date);
-    if (checkoutDate && date >= checkoutDate) {
-      setErrorMessage('Check-In Date must be BEFORE Check-Out Date');
+    const currentDate = new Date();
+    if (date < currentDate) {
+      setErrorMessage('The Check-In Date must be Today or Later.');
     } else {
-      setErrorMessage('');
+      setCheckinDate(date);
+      if (checkoutDate && date >= checkoutDate) {
+        setErrorMessage('Check-In Date must be BEFORE Check-Out Date');
+      } else {
+        setErrorMessage('');
+      }
     }
   };
 
@@ -43,7 +48,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="w-full max-w-5xl p-8 mx-auto mt-8 bg-white shadow-lg rounded-2xl">
+    <div className="w-full max-w-[1300px] p-8 mx-auto mt-8 bg-white shadow-lg rounded-2xl">
       <div className="flex flex-col items-stretch gap-6 lg:flex-row">
         {/* Location Input */}
         <div className="relative flex-1">
