@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaSearch, FaCalendarAlt, FaUser } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './css/datepicker.css';
 
 function SearchBar() {
   const [location, setLocation] = useState('');
@@ -26,7 +27,7 @@ function SearchBar() {
   const handleCheckinDateChange = (date) => {
     setCheckinDate(date);
     if (checkoutDate && date >= checkoutDate) {
-      setErrorMessage('Check-in date must be before check-out date');
+      setErrorMessage('Check-In Date must be BEFORE Check-Out Date');
     } else {
       setErrorMessage('');
     }
@@ -46,12 +47,12 @@ function SearchBar() {
       <div className="flex flex-col items-stretch gap-6 lg:flex-row">
         {/* Location Input */}
         <div className="relative flex-1">
-          <label className="flex items-center mb-2 text-lg font-semibold text-gray-700">
+          <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaSearch className="mr-2" /> Location
           </label>
           <input
             type="text"
-            className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Search location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -77,7 +78,7 @@ function SearchBar() {
 
         {/* Checkin Date */}
         <div className="relative flex-1">
-          <label className="flex items-center mb-2 text-lg font-semibold text-gray-700">
+          <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaCalendarAlt className="mr-2" /> Check-in
           </label>
           <DatePicker
@@ -90,7 +91,7 @@ function SearchBar() {
 
         {/* Checkout Date */}
         <div className="relative flex-1">
-          <label className="flex items-center mb-2 text-lg font-semibold text-gray-700">
+          <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaCalendarAlt className="mr-2" /> Check-out
           </label>
           <DatePicker
@@ -103,10 +104,10 @@ function SearchBar() {
 
         {/* Guests */}
         <div className="relative flex-1">
-          <label className="flex items-center mb-2 text-lg font-semibold text-gray-700">
+          <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaUser className="mr-2" /> Guests
           </label>
-          <div onClick={() => setShowGuestDropdown(!showGuestDropdown)} className="w-full p-4 border border-gray-300 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <div onClick={() => setShowGuestDropdown(!showGuestDropdown)} className="w-full p-3 border border-gray-300 cursor-pointer rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500">
             {`Adults: ${adults} Children: ${children}`}
           </div>
           {showGuestDropdown && (
@@ -115,7 +116,7 @@ function SearchBar() {
                 <span>Adults</span>
                 <div className="flex items-center">
                   <button
-                    className="p-2 bg-gray-300 rounded-full"
+                    className="p-1 bg-gray-300 rounded-full w-7"
                     onClick={() => handleGuestChange('adults', 'decrement')}
                     disabled={adults === 1}
                   >
@@ -123,7 +124,7 @@ function SearchBar() {
                   </button>
                   <span className="mx-4">{adults}</span>
                   <button
-                    className="p-2 bg-gray-300 rounded-full"
+                    className="p-1 bg-gray-300 rounded-full w-7"
                     onClick={() => handleGuestChange('adults', 'increment')}
                   >
                     +
@@ -134,7 +135,7 @@ function SearchBar() {
                 <span>Children</span>
                 <div className="flex items-center">
                   <button
-                    className="p-2 bg-gray-300 rounded-full"
+                    className="p-1 bg-gray-300 rounded-full w-7"
                     onClick={() => handleGuestChange('children', 'decrement')}
                     disabled={children === 0}
                   >
@@ -142,7 +143,7 @@ function SearchBar() {
                   </button>
                   <span className="mx-4">{children}</span>
                   <button
-                    className="p-2 bg-gray-300 rounded-full"
+                    className="p-1 bg-gray-300 rounded-full w-7"
                     onClick={() => handleGuestChange('children', 'increment')}
                   >
                     +
