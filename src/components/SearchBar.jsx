@@ -13,12 +13,31 @@ function SearchBar() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleGuestChange = (type, action) => {
     if (type === 'adults') {
       setAdults(action === 'increment' ? adults + 1 : adults - 1);
     } else if (type === 'children') {
       setChildren(action === 'increment' ? children + 1 : children - 1);
+    }
+  };
+
+  const handleCheckinDateChange = (date) => {
+    setCheckinDate(date);
+    if (checkoutDate && date >= checkoutDate) {
+      setErrorMessage('Check-in date must be before check-out date');
+    } else {
+      setErrorMessage('');
+    }
+  };
+
+  const handleCheckoutDateChange = (date) => {
+    setCheckoutDate(date);
+    if (checkinDate && date <= checkinDate) {
+      setErrorMessage('Check-out date must be after check-in date');
+    } else {
+      setErrorMessage('');
     }
   };
 
@@ -64,7 +83,7 @@ function SearchBar() {
           <DatePicker
             selected={checkinDate}
             placeholderText='Select Check-in Date'
-            onChange={(date) => setCheckinDate(date)}
+            onChange={handleCheckinDateChange}
             className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -77,7 +96,7 @@ function SearchBar() {
           <DatePicker
             selected={checkoutDate}
             placeholderText='Select Check-out Date'
-            onChange={(date) => setCheckoutDate(date)}
+            onChange={handleCheckoutDateChange}
             className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -88,7 +107,7 @@ function SearchBar() {
             <FaUser className="mr-2" /> Guests
           </label>
           <div onClick={() => setShowGuestDropdown(!showGuestDropdown)} className="w-full p-4 border border-gray-300 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
-            {`Adults:${adults} Children:${children}`}
+            {`Adults: ${adults} Children: ${children}`}
           </div>
           {showGuestDropdown && (
             <div className="absolute z-10 w-full p-4 mt-1 bg-white border border-gray-300 rounded-xl">
@@ -142,6 +161,7 @@ function SearchBar() {
           )}
         </div>
       </div>
+      {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
     </div>
   );
 }
