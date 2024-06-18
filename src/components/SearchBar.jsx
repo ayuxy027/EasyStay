@@ -35,7 +35,7 @@ function SearchBar() {
   const handleCheckoutDateChange = (date) => {
     setCheckoutDate(date);
     if (checkinDate && date <= checkinDate) {
-      setErrorMessage('Check-out date must be after check-in date');
+      setErrorMessage('Check-Out Date must be AFTER Check-In Date');
     } else {
       setErrorMessage('');
     }
