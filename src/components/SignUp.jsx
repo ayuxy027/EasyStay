@@ -1,10 +1,28 @@
 import SignupImage from '../images/SignUp.png';
-import Logo from '../images/Logo.png';
-import { Link } from 'react-router-dom';
-
-// This Page Appears when the user clicks on the SignUp button on the Navbar
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
+import { BACKEND_URL } from '../config';
 
 function SignUp() {
+  const navigate = useNavigate();
+  const [postInputs, setPostInputs] = useState({
+    email: "",
+    password: ""
+  }); 
+
+  async function sendRequest() {
+    try {
+      const response = await axios.post(`${BACKEND_URL}/user/signup`, postInputs);
+      const jwt = response.data;
+      console.log(jwt);
+      localStorage.setItem("token", jwt.jwt);
+      navigate("/home");
+    } catch (e) {
+      alert("Not signed up");
+    }
+  }
+
   return (
     <div className="flex justify-center min-h-[500px] text-gray-900 bg-gray-100">
       <div className="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg">
@@ -14,22 +32,37 @@ function SignUp() {
               Sign Up
             </h1>
             <div className="flex-1 w-full mt-8">
-              <div className="flex flex-col items-center">
-              </div>
               <div className="max-w-xs mx-auto">
-                <input
+                <input 
                   className="w-full px-8 py-4 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="email" placeholder="xyz@gmail.com" required />
+                  type="email" placeholder="xyz@gmail.com" required 
+                  onChange={(e) => {
+                    setPostInputs({
+                      ...postInputs,
+                      email: e.target.value,
+                    });
+                  }}
+                />
                 <input
                   className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="password" placeholder="Password" required />
+                  type="password" placeholder="Password" required 
+                  onChange={(e) => {
+                    setPostInputs({
+                      ...postInputs,
+                      password: e.target.value,
+                    });
+                  }}
+                />
                 <input
                   className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="password" placeholder="Re-Enter Password" required />
+                  type="password" placeholder="Re-Enter Password" required
+                />
+               
                 <button
-                  className="flex items-center justify-center w-full py-4 mt-5 mb-8 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out bg-blue-500 rounded-lg hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
-                  <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
-                    strokeLinecap="round" strokeLinejoin="round">
+                  className="flex items-center justify-center w-full py-4 mt-5 mb-8 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out bg-blue-500 rounded-lg hover:bg-indigo-700 focus:shadow-outline focus:outline-none"
+                  onClick={sendRequest}
+                >
+                  <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                     <circle cx="8.5" cy="7" r="4" />
                     <path d="M20 8v6M23 11h-6" />
@@ -38,6 +71,8 @@ function SignUp() {
                     Sign Up
                   </span>
                 </button>
+
+              
                 <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-2 bg-white rounded-full">
                     <svg className="w-4" viewBox="0 0 533.5 544.3">

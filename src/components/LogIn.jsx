@@ -1,8 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import LogInImage from '../images/LogIn.jpg';
+import { BACKEND_URL } from '../config';
 
 function LogIn() {
+  const navigate = useNavigate();
+  const [loginInputs, setLoginInputs] = useState({
+    email: "",
+    password: ""
+  });
+
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLoginInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value
+    }));
+  };
+
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(`${BACKEND_URL}/user/login`, loginInputs);
+      const jwt = response.data;
+      console.log(jwt);
+
+      localStorage.setItem('token', jwt.jwt);
+      navigate('/home');
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('Login failed. Please check your credentials and try again.');
+    }
+  };
+
   return (
     <div className="flex justify-center min-h-[500px] text-gray-900 bg-gray-100">
       <div className="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg">
@@ -17,17 +49,24 @@ function LogIn() {
                 <input
                   className="w-full px-8 py-4 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="email"
+                  name="email"
                   placeholder="xyz@gmail.com"
+                  value={loginInputs.email}
+                  onChange={handleInputChange}
                   required
                 />
                 <input
                   className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="password"
+                  name="password"
                   placeholder="Password"
+                  value={loginInputs.password}
+                  onChange={handleInputChange}
                   required
                 />
                 <button
                   className="flex items-center justify-center w-full py-4 mt-5 mb-8 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out bg-blue-500 rounded-lg hover:bg-indigo-700 focus:shadow-outline focus:outline-none"
+                  onClick={handleLogin}
                 >
                   <svg
                     className="w-6 h-6 -ml-2"
@@ -43,6 +82,7 @@ function LogIn() {
                   </svg>
                   <span className="ml-3">Log In</span>
                 </button>
+               
                 <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-2 bg-white rounded-full">
                     <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -68,9 +108,8 @@ function LogIn() {
                 </button>
                 <button className="flex items-center justify-center w-full max-w-xs py-3 mt-5 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-1 bg-white rounded-full">
-                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2"/>
                       <path d="M22.675 0H1.325C.595 0 0 .595 0 1.325v21.35C0 23.405.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.144v3.24h-1.917c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.468 3.622h-3.119V24h6.116c.73 0 1.324-.595 1.324-1.325V1.325C24 .595 23.405 0 22.675 0z" />
-                    </svg>
                   </div>
                   <span className="ml-4">Log In with Facebook</span>
                 </button>

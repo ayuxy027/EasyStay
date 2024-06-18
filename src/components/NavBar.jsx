@@ -7,7 +7,7 @@ function NavBar() {
     <>
       <nav className="bg-white border-gray-200 font-body">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-          <Link to="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src={Logo} alt="Logo" className="self-center w-auto h-10" />
           </Link>
           <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
