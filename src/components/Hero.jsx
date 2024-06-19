@@ -60,6 +60,3 @@ function Hero() {
 }
 
 export default Hero;
-
-// give me links of wesite which can provide me images similar to that of card images currently in the hero section if the image attached,
-// I want image of animated hotel figma designs

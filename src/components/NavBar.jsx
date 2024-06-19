@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.png';
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <nav className="bg-white border-gray-200 font-body">
+      <nav className="bg-white border-b border-gray-200 shadow-md font-body">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src={Logo} alt="Logo" className="self-center w-auto h-10" />
@@ -14,7 +20,7 @@ function NavBar() {
             <Link to={"/Login"}>
               <button
                 type="button"
-                className="text-black bg-sky-600 transition delay-75 ease-in hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl md:text-lg px-4 py-2 text-center mr-[10px] sm:text-sm"
+                className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl md:text-lg px-4 py-2 text-center mr-[10px] sm:text-sm"
               >
                 Login
               </button>
@@ -22,17 +28,17 @@ function NavBar() {
             <Link to={"/signup"}>
               <button
                 type="button"
-                className="px-4 py-2 font-medium text-center text-black transition ease-in delay-75 bg-sky-600 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-3xl md:text-lg sm:text-sm"
+                className="px-4 py-2 font-medium text-center text-white transition-transform duration-200 ease-in-out bg-blue-600 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-3xl md:text-lg sm:text-sm"
               >
                 SignUp
               </button>
             </Link>
             <button
-              data-collapse-toggle="navbar-cta"
+              onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 transition-colors duration-200 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-cta"
-              aria-expanded="false"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -53,14 +59,14 @@ function NavBar() {
             </button>
           </div>
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`}
             id="navbar-cta"
           >
             <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
               <li>
-                <Link to="home">
+                <Link to="/home">
                   <button
-                    className="block px-3 py-2 text-lg text-white bg-blue-700 rounded md:p-0 md:bg-transparent md:text-blue-700"
+                    className="block px-3 py-2 text-lg text-blue-700 transition-colors duration-200 rounded hover:text-blue-900 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
                     aria-current="page"
                   >
                     Home
@@ -70,7 +76,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
                 >
                   Get Franchise
                 </Link>
@@ -78,7 +84,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
                 >
                   PRO
                 </Link>
@@ -86,7 +92,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
                 >
                   24/7 Support
                 </Link>
