@@ -71,16 +71,6 @@ function SignUp() {
               </div>
               <div className="relative max-w-xs mx-auto mt-5">
                 <FaLock className="absolute top-3.5 left-3.5 text-gray-400 text-lg" />
-                <input
-                  className="w-full py-4 pl-10 pr-8 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type={showPassword ? "text" : "password"} placeholder="Re-Enter Password" required
-                  onChange={(e) => {
-                    setPostInputs({
-                      ...postInputs,
-                      reenterPassword: e.target.value.trim(),
-                    });
-                  }}
-                />
               </div>
               <button
                 className={`flex items-center justify-center w-[320px] ml-[60px] py-4 mt-5 mb-8 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out rounded-lg focus:shadow-outline focus:outline-none ${isFormValid ? "bg-blue-500 hover:bg-indigo-700" : "bg-gray-400 cursor-not-allowed"}`}
