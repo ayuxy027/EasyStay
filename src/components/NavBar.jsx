@@ -8,7 +8,6 @@ function NavBar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <>
       <nav className="bg-white border-b border-gray-200 shadow-md font-body">
@@ -20,7 +19,7 @@ function NavBar() {
             <Link to={"/Login"}>
               <button
                 type="button"
-                className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl md:text-lg px-4 py-2 text-center mr-[10px] sm:text-sm"
+                className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
               >
                 Login
               </button>
@@ -28,9 +27,9 @@ function NavBar() {
             <Link to={"/signup"}>
               <button
                 type="button"
-                className="px-4 py-2 font-medium text-center text-white transition-transform duration-200 ease-in-out bg-blue-600 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-3xl md:text-lg sm:text-sm"
+                className="px-4 py-2 font-medium text-center text-white transition-transform duration-200 ease-in-out bg-green-600 rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-green-300"
               >
-                SignUp
+                Sign Up
               </button>
             </Link>
             <button
@@ -66,7 +65,7 @@ function NavBar() {
               <li>
                 <Link to="/home">
                   <button
-                    className="block px-3 py-2 text-lg text-blue-700 transition-colors duration-200 rounded hover:text-blue-900 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
+                    className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white"
                     aria-current="page"
                   >
                     Home
