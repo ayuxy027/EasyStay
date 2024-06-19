@@ -108,8 +108,9 @@ function LogIn() {
                 </button>
                 <button className="flex items-center justify-center w-full max-w-xs py-3 mt-5 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-1 bg-white rounded-full">
-                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2"/>
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2">
                       <path d="M22.675 0H1.325C.595 0 0 .595 0 1.325v21.35C0 23.405.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.144v3.24h-1.917c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.468 3.622h-3.119V24h6.116c.73 0 1.324-.595 1.324-1.325V1.325C24 .595 23.405 0 22.675 0z" />
+                     </svg> 
                   </div>
                   <span className="ml-4">Log In with Facebook</span>
                 </button>
