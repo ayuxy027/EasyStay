@@ -60,7 +60,7 @@ function NavBar() {
               <li>
                 <Link to="home">
                   <button
-                    className="block px-3 py-2 text-white bg-blue-700 rounded md:p-0 md:bg-transparent md:text-blue-700"
+                    className="block px-3 py-2 text-lg text-white bg-blue-700 rounded md:p-0 md:bg-transparent md:text-blue-700"
                     aria-current="page"
                   >
                     Home
@@ -70,7 +70,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
                 >
                   Get Franchise
                 </Link>
@@ -78,7 +78,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
                 >
                   PRO
                 </Link>
@@ -86,7 +86,7 @@ function NavBar() {
               <li>
                 <Link
                   to="#"
-                  className="block px-3 py-2 text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                  className="block px-3 py-2 text-lg text-gray-900 rounded md:p-0 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
                 >
                   24/7 Support
                 </Link>
