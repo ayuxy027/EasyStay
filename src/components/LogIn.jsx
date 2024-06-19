@@ -104,11 +104,12 @@ function LogIn() {
           </div>
         </div>
         <div className="flex-1 hidden text-center bg-slate-100 lg:flex">
-     <div
-        className="relative w-full m-12 bg-center bg-no-repeat bg-contain xl:m-16"
-          style={{ backgroundImage: `url(${LogInImage})` }}
-          ></div>
-         </div>
+          <div
+            className="relative w-full m-12 bg-center bg-no-repeat bg-contain xl:m-16"
+            style={{ backgroundImage: `url(${LogInImage})` }}
+          >
+          </div>
+        </div>
       </div>
     </div>
   );

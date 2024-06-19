@@ -14,7 +14,7 @@ function NavBar() {
             <Link to={"/Login"}>
               <button
                 type="button"
-                className="text-black bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl md:text-lg px-4 py-2 text-center mr-[10px] sm:text-sm"
+                className="text-black bg-sky-600 transition delay-75 ease-in hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl md:text-lg px-4 py-2 text-center mr-[10px] sm:text-sm"
               >
                 Login
               </button>
@@ -22,7 +22,7 @@ function NavBar() {
             <Link to={"/signup"}>
               <button
                 type="button"
-                className="px-4 py-2 font-medium text-center text-black bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-3xl md:text-lg sm:text-sm"
+                className="px-4 py-2 font-medium text-center text-black transition ease-in delay-75 bg-sky-600 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-3xl md:text-lg sm:text-sm"
               >
                 SignUp
               </button>

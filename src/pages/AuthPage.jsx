@@ -1,10 +1,8 @@
 import React from 'react'
 
-const AuthPage = () => {
+function AuthPage() {
   return (
-    <div>
-      
-    </div>
+    <div>AuthPage</div>
   )
 }
 

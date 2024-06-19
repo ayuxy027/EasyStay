@@ -6,8 +6,8 @@ import Hero from '../components/Hero'
 const HomePage = () => {
   return (
     <div>
-      <SearchBar/>
       <Hero/>
+      <SearchBar/>
     </div>
   )
 }
