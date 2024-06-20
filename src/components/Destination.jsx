@@ -67,10 +67,10 @@ function Destination() {
     return (
         <section className="py-12 bg-white sm:py-16 lg:py-20">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">Popular Destinations</h2>
-                    <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-pj">Explore some of the most popular travel destinations in India.</p>
-                </div>
+            <div className="text-center">
+    <h2 className="mt-12 mb-6 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">Popular Destinations</h2>
+    <p className="mt-4 mb-12 text-base leading-7 text-gray-600 sm:mt-8 font-pj">Explore some of the most popular travel destinations in India.</p>
+</div>
 
                 {/* State filter dropdown */}
                 <div className="mb-4">
