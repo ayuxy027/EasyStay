@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Destination from '../components/Destination'
 import Services from '../components/Services'
 import Feedback from '../components/Feedback'
+import FAQ from './FAQ'
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Destination/>
       <Services />
       <Feedback />
+      <FAQ />
     </div>
   )
 }
