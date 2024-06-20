@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function FAQ() {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -142,7 +143,7 @@ function FAQ() {
                         </div>
                     ))}
                 </div>
-                <p className="text-base text-center text-gray-600 transition-colors duration-300 ease-in-out mt-9 hover:text-blue-500">Didn’t find the answer you are looking for? Contact our support</p>
+               <Link to="/support"><p className="text-base text-center text-gray-600 transition-colors duration-300 ease-in-out mt-9 hover:text-blue-500">Didn’t find the answer you are looking for? Contact our support</p></Link>
             </div>
         </section>
     );
