@@ -16,7 +16,6 @@ function NavBar() {
           <img src={Logo} alt="Logo" className="w-auto h-10" />
         </Link>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-          <a href="/Login">
           <Link to="/Login">
             <button
               type="button"
@@ -25,7 +24,6 @@ function NavBar() {
               Login
             </button>
           </Link>
-          </a>
           <Link to="/signup">
             <button
               type="button"
