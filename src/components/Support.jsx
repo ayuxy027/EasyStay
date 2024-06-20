@@ -16,29 +16,25 @@ const Support = () => {
     }));
   };
 
-  // Handle form submission (stub for now)
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Here you can add your form submission logic, e.g., sending data to a server
   };
 
   return (
     <div className="bg-neutral-900">
       <div className="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
-        {/* Title */}
         <div className="max-w-3xl mb-10 lg:mb-14">
           <h2 className="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Contact Us</h2>
           <p className="mt-1 text-neutral-400">We're here to assist you with your stay.</p>
         </div>
-        {/* End Title */}
 
-        {/* Grid */}
+   
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
           <div className="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
-                {/* Input for Name */}
+             
                 <div className="relative">
                   <input 
                     type="text" 
@@ -68,9 +64,8 @@ const Support = () => {
                     Name
                   </label>
                 </div>
-                {/* End Input */}
+     
 
-                {/* Input for Email */}
                 <div className="relative">
                   <input 
                     type="email" 
@@ -100,9 +95,6 @@ const Support = () => {
                     Email
                   </label>
                 </div>
-                {/* End Input */}
-
-                {/* Input for Phone */}
                 <div className="relative">
                   <input 
                     type="text" 
@@ -132,9 +124,6 @@ const Support = () => {
                     Phone
                   </label>
                 </div>
-                {/* End Input */}
-
-                {/* Textarea for Message */}
                 <div className="relative">
                   <textarea 
                     id="message" 
@@ -163,7 +152,6 @@ const Support = () => {
                     How can we assist you with your booking?
                   </label>
                 </div>
-                {/* End Textarea */}
               </div>
 
               <div className="mt-2">
@@ -197,10 +185,9 @@ const Support = () => {
               </div>
             </form>
           </div>
-          {/* End Col */}
 
           <div className="space-y-14">
-            {/* Item for Address */}
+           
             <div className="flex gap-x-5">
               <svg className="flex-shrink-0 h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z" />
@@ -211,9 +198,7 @@ const Support = () => {
                 <p className="text-neutral-400">1234 Hotel Blvd, City, Country</p>
               </div>
             </div>
-            {/* End Item */}
-
-            {/* Item for Email */}
+       
             <div className="flex gap-x-5">
               <svg className="flex-shrink-0 h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
@@ -226,9 +211,7 @@ const Support = () => {
                 <p className="text-neutral-400">contact@hotel.com</p>
               </div>
             </div>
-            {/* End Item */}
-
-            {/* Item for Phone */}
+      
             <div className="flex gap-x-5">
               <svg className="flex-shrink-0 h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.83 19.83 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12 1 .51 2.05 1.09 2.92a2 2 0 0 1-.45 2.32L10 12.54a16 16 0 0 0 6.09 6.09l2.58-2.58a2 2 0 0 1 2.32-.45 11.55 11.55 0 0 0 2.92 1.09 2 2 0 0 1 1.72 2.04z" />
@@ -238,13 +221,11 @@ const Support = () => {
                 <p className="text-neutral-400">+123 456 7890</p>
               </div>
             </div>
-            {/* End Item */}
+        
           </div>
-          {/* End Col */}
+        
         </div>
-        {/* End Grid */}
-
-        {/* FAQ Link */}
+       
         <div className="mt-10 text-center">
           <a href="/faq" className="text-white underline text-sm md:text-base">Frequently Asked Questions</a>
         </div>
