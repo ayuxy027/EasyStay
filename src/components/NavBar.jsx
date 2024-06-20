@@ -64,9 +64,9 @@ function NavBar() {
           id="navbar-cta"
         >
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-            {/* Removed Home link */}
+      
             <li>
-              <Link to="#" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
+              <Link to="/get-franchise" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
                 Get Franchise
               </Link>
             </li>
@@ -76,7 +76,12 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <Link to="#" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
+              <Link to="/faq" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="/support" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
                 24/7 Support
               </Link>
             </li>

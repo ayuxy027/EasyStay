@@ -14,7 +14,6 @@ const HomePage = () => {
       <Destination/>
       <Services />
       <Feedback />
-      <FAQ />
     </div>
   )
 }

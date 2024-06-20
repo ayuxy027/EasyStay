@@ -81,7 +81,7 @@ function SearchBar() {
           )}
         </div>
 
-        {/* Checkin Date */}
+     
         <div className="relative flex-1">
           <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaCalendarAlt className="mr-2" /> Check-in
@@ -94,7 +94,7 @@ function SearchBar() {
           />
         </div>
 
-        {/* Checkout Date */}
+    
         <div className="relative flex-1">
           <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaCalendarAlt className="mr-2" /> Check-out
@@ -107,7 +107,7 @@ function SearchBar() {
           />
         </div>
 
-        {/* Guests */}
+       
         <div className="relative flex-1">
           <label className="flex items-center mb-2 ml-3 text-lg font-semibold text-gray-700">
             <FaUser className="mr-2" /> Guests

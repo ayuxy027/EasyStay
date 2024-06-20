@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage.jsx";
 import SignUp from "./components/SignUp.jsx";
 import { Route,Routes } from "react-router-dom";
 import LogIn from "./components/LogIn.jsx";
+import FAQPage from "./pages/FAQPage.jsx";
+import SupportPage from "./pages/SupportPage.jsx";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<LogIn />} />
       <Route path="/home" element={<HomePage/>}/>
+      <Route path="/get-franchise"/>
+      <Route path="/faq" element={<FAQPage/>}/>
+      <Route path="/support" element={<SupportPage/>}/>
       </Routes>
     </>
   );
