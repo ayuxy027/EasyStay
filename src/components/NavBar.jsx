@@ -16,6 +16,7 @@ function NavBar() {
           <img src={Logo} alt="Logo" className="w-auto h-10" />
         </Link>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+          <a href="/Login">
           <Link to="/Login">
             <button
               type="button"
@@ -24,6 +25,7 @@ function NavBar() {
               Login
             </button>
           </Link>
+          </a>
           <Link to="/signup">
             <button
               type="button"
@@ -64,7 +66,6 @@ function NavBar() {
           id="navbar-cta"
         >
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-      
             <li>
               <Link to="/get-franchise" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
                 Get Franchise
