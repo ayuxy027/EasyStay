@@ -5,7 +5,7 @@ function Destination() {
     const [selectedDestination, setSelectedDestination] = useState(null);
     const [selectedState, setSelectedState] = useState(""); // State for selected filter
 
-    const destinations = [
+        const destinations = [
         {
             name: 'Mumbai',
             imgSrc: 'https://t3.ftcdn.net/jpg/03/55/64/04/360_F_355640480_FKKv2BQwqY6sMa6jmEGVPnEndX1GPtJU.jpg',
@@ -54,9 +54,7 @@ function Destination() {
             info: 'Manali is famous for its adventure sports, snow-capped mountains, and serene landscapes.',
             state: 'Himachal Pradesh',
         },
-
     ];
-
 
     const handleClick = (index) => {
         setSelectedDestination(selectedDestination === index ? null : index);
@@ -67,17 +65,13 @@ function Destination() {
     };
 
     return (
-        <section className="text-gray-600 body-font">
-            <div className="container px-5 py-24 mx-auto">
-                <div className="flex flex-wrap w-full mb-20">
-                    <div className="w-full mb-6 lg:w-1/2 lg:mb-0">
-                        <h1 className="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Popular Destinations</h1>
-                        <div className="w-20 h-1 bg-blue-500 rounded"></div>
-                    </div>
-                    <p className="w-full leading-relaxed text-gray-500 lg:w-1/2">
-                        Explore some of the most popular travel destinations in India.
-                    </p>
+        <section className="py-12 bg-white sm:py-16 lg:py-20">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">Popular Destinations</h2>
+                    <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-pj">Explore some of the most popular travel destinations in India.</p>
                 </div>
+
                 {/* State filter dropdown */}
                 <div className="mb-4">
                     <label htmlFor="stateFilter" className="mr-2 font-medium text-gray-900">Filter by State:</label>
