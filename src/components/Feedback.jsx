@@ -5,11 +5,11 @@ function Feedback() {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center">
                     <div className="text-center">
-                        <p className="text-lg font-medium text-gray-600 font-pj">2,157 people have said how good Rareblocks</p>
-                        <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Our happy clients say about us</h2>
+                        <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Our Testimonials</h2>
+                        <p className="text-lg font-medium text-gray-600 font-pj mt-[10px] md:text-lg sm:text-sm">Enhancing Every Experience</p>
                     </div>
                     <div className="mt-8 text-center md:mt-16 md:order-3">
-                        <p className="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"> Check all 2,157 reviews </p>
+                        <p className="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 cursor-pointer hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"> Check all 2,157 reviews </p>
                     </div>
                     <div className="relative mt-10 md:mt-24 md:order-2">
                         <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
