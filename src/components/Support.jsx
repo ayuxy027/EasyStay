@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const Support = () => {
   const [formData, setFormData] = useState({
@@ -228,7 +229,7 @@ const Support = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <a href="/faq" className="text-sm underline text-sky-600 md:text-base">See FAQs</a>
+          <Link to="/faq" className="text-sm underline text-sky-600 md:text-base">See FAQs</Link>
         </div>
       </div>
     </div>
