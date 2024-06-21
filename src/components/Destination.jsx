@@ -8,7 +8,29 @@ import KolkataImg from '../images/Destinations/Kolkata.jpg';
 import ShimlaImg from '../images/Destinations/Shimla.jpg';
 import JaipurImg from '../images/Destinations/Jaipur.jpg';
 import ManaliImg from '../images/Destinations/Manali.png';
-import BhubaneshwarImg from '../images/Destinations/Bhubaneshwar.jpg'; // Import the new image
+import BhubaneshwarImg from '../images/Destinations/Bhubaneshwar.jpg';
+
+// Additional images
+// import BengaluruImg from '../images/Destinations/Bengaluru.jpg';
+// import HyderabadImg from '../images/Destinations/Hyderabad.jpg';
+// import ChandigarhImg from '../images/Destinations/Chandigarh.jpg';
+// import LucknowImg from '../images/Destinations/Lucknow.jpg';
+// import PuneImg from '../images/Destinations/Pune.jpg';
+// import ThiruvananthapuramImg from '../images/Destinations/Thiruvananthapuram.jpg';
+// import AhmedabadImg from '../images/Destinations/Ahmedabad.jpg';
+// import GuwahatiImg from '../images/Destinations/Guwahati.jpg';
+// import VaranasiImg from '../images/Destinations/Varanasi.jpg';
+// import AmritsarImg from '../images/Destinations/Amritsar.jpg';
+// import BhopalImg from '../images/Destinations/Bhopal.jpg';
+// import UdaipurImg from '../images/Destinations/Udaipur.jpg';
+// import MysoreImg from '../images/Destinations/Mysore.jpg';
+// import VisakhapatnamImg from '../images/Destinations/Visakhapatnam.jpg';
+// import CoimbatoreImg from '../images/Destinations/Coimbatore.jpg';
+// import SuratImg from '../images/Destinations/Surat.jpg';
+// import PatnaImg from '../images/Destinations/Patna.jpg';
+// import RanchiImg from '../images/Destinations/Ranchi.jpg';
+// import GangtokImg from '../images/Destinations/Gangtok.jpg';
+// import ItanagarImg from '../images/Destinations/Itanagar.jpg';
 
 function Destination() {
     const [selectedDestination, setSelectedDestination] = useState(null);
@@ -20,56 +42,176 @@ function Destination() {
         {
             name: 'Mumbai',
             imgSrc: MumbaiImg,
-            info: 'Mumbai is the financial, commercial, and entertainment capital of India.',
+            info: 'Mumbai is the financial, commercial, and entertainment capital of India, bustling with vibrant nightlife and diverse cultural heritage. The city is home to Bollywood, the iconic Gateway of India, and numerous museums, galleries, and beaches.',
             state: 'Maharashtra',
         },
         {
             name: 'Agra',
             imgSrc: AgraImg,
-            info: 'Agra is famous for its cultural heritage and the magnificent Taj Mahal.',
+            info: 'Agra is renowned for its rich cultural heritage and the magnificent Taj Mahal, a UNESCO World Heritage Site. Visitors can also explore the Agra Fort and Fatehpur Sikri, both showcasing Mughal architecture at its finest.',
             state: 'Uttar Pradesh',
         },
         {
             name: 'Ooty',
             imgSrc: OotyImg,
-            info: 'Ooty is famous for its tea plantations and beautiful landscapes.',
+            info: 'Ooty, also known as Udhagamandalam, is famous for its tea plantations, rolling hills, and stunning landscapes. The Nilgiri Mountain Railway offers scenic views, and the botanical gardens are a delight for nature enthusiasts.',
             state: 'Tamil Nadu',
         },
         {
             name: 'Panjim',
             imgSrc: GoaImg,
-            info: 'Goa is renowned for its beaches, Portuguese heritage, and lively parties.',
+            info: 'Goa is renowned for its beautiful beaches, Portuguese heritage, and vibrant nightlife. The state capital, Panjim, offers a mix of colonial architecture, lively markets, and serene waterfronts.',
             state: 'Goa',
         },
         {
             name: 'Kolkata',
             imgSrc: KolkataImg,
-            info: 'Kolkata is known for its rich culture, colonial architecture, and delicious cuisine.',
+            info: 'Kolkata, the cultural capital of India, is known for its rich history, colonial architecture, and literary heritage. Key attractions include the Victoria Memorial, Howrah Bridge, and a thriving arts scene.',
             state: 'West Bengal',
         },
         {
             name: 'Shimla',
             imgSrc: ShimlaImg,
-            info: 'Shimla is a picturesque hill station known for its scenic beauty and colonial charm.',
-            state: 'Himachal',
+            info: 'Shimla, the capital of Himachal Pradesh, is a picturesque hill station known for its scenic beauty, colonial architecture, and pleasant climate. Major attractions include the Mall Road, Jakhoo Temple, and Christ Church.',
+            state: 'Himachal Pradesh',
         },
         {
             name: 'Jaipur',
             imgSrc: JaipurImg,
-            info: 'Jaipur, the Pink City, is known for its majestic palaces, vibrant culture, and rich history.',
+            info: 'Jaipur, the Pink City, is famous for its majestic palaces, vibrant culture, and rich history. Visitors can explore the City Palace, Amber Fort, and Hawa Mahal, and experience the lively markets and traditional Rajasthani cuisine.',
             state: 'Rajasthan',
         },
         {
             name: 'Manali',
             imgSrc: ManaliImg,
-            info: 'Manali is famous for its adventure sports, snow-capped mountains, and serene landscapes.',
-            state: 'Himachal',
+            info: 'Manali is a popular hill station in Himachal Pradesh, known for its adventure sports, snow-capped mountains, and serene landscapes. Key attractions include the Solang Valley, Rohtang Pass, and Hadimba Temple.',
+            state: 'Himachal Pradesh',
         },
         {
             name: 'Bhubaneshwar',
             imgSrc: BhubaneshwarImg,
-            info: 'Bhubaneshwar is known for its ancient temples and rich cultural heritage.',
+            info: 'Bhubaneshwar, the capital of Odisha, is known for its ancient temples and rich cultural heritage. The city is home to the Lingaraj Temple, Udayagiri and Khandagiri Caves, and the Odisha State Museum.',
             state: 'Odisha',
+        },
+        {
+            name: 'Bengaluru',
+            // imgSrc: BengaluruImg,
+            info: 'Bengaluru, the Silicon Valley of India, is known for its pleasant climate, lush parks, and vibrant nightlife. Key attractions include Lalbagh Botanical Garden, Bangalore Palace, and a thriving tech industry.',
+            state: 'Karnataka',
+        },
+        {
+            name: 'Hyderabad',
+            // imgSrc: HyderabadImg,
+            info: 'Hyderabad, the City of Pearls, is known for its rich history, magnificent palaces, and delicious cuisine. Visitors can explore the Charminar, Golconda Fort, and Ramoji Film City.',
+            state: 'Telangana',
+        },
+        {
+            name: 'Chandigarh',
+            // imgSrc: ChandigarhImg,
+            info: 'Chandigarh, a union territory and the capital of Punjab and Haryana, is known for its modern architecture and urban design. Key attractions include the Rock Garden, Sukhna Lake, and the Capitol Complex.',
+            state: 'Chandigarh',
+        },
+        {
+            name: 'Lucknow',
+            // imgSrc: LucknowImg,
+            info: 'Lucknow, the City of Nawabs, is known for its rich history, exquisite cuisine, and beautiful architecture. Major attractions include Bara Imambara, Rumi Darwaza, and Hazratganj market.',
+            state: 'Uttar Pradesh',
+        },
+        {
+            name: 'Pune',
+            // imgSrc: PuneImg,
+            info: 'Pune, the cultural capital of Maharashtra, is known for its educational institutions, historical sites, and vibrant nightlife. Key attractions include Shaniwar Wada, Aga Khan Palace, and Osho Ashram.',
+            state: 'Maharashtra',
+        },
+        {
+            name: 'Thiruvananthapuram',
+            // imgSrc: ThiruvananthapuramImg,
+            info: 'Thiruvananthapuram, the capital of Kerala, is known for its serene beaches, historical landmarks, and vibrant cultural scene. Major attractions include the Padmanabhaswamy Temple, Kovalam Beach, and the Napier Museum.',
+            state: 'Kerala',
+        },
+        {
+            name: 'Ahmedabad',
+            // imgSrc: AhmedabadImg,
+            info: 'Ahmedabad, a major city in Gujarat, is known for its rich cultural heritage, textile industry, and historic sites. Key attractions include the Sabarmati Ashram, Kankaria Lake, and the vibrant old city area.',
+            state: 'Gujarat',
+        },
+        {
+            name: 'Guwahati',
+            // imgSrc: GuwahatiImg,
+            info: 'Guwahati, the gateway to Northeast India, is known for its ancient temples, scenic beauty, and vibrant markets. Major attractions include the Kamakhya Temple, Umananda Island, and the Assam State Museum.',
+            state: 'Assam',
+        },
+        {
+            name: 'Varanasi',
+            // imgSrc: VaranasiImg,
+            info: 'Varanasi, one of the oldest cities in the world, is known for its spiritual significance, ghats, and temples. Key attractions include the Kashi Vishwanath Temple, Dashashwamedh Ghat, and the evening Ganga Aarti.',
+            state: 'Uttar Pradesh',
+        },
+        {
+            name: 'Amritsar',
+            // imgSrc: AmritsarImg,
+            info: 'Amritsar, the spiritual center of Sikhism, is known for the Golden Temple, its vibrant markets, and rich history. Visitors can also explore the Jallianwala Bagh and the Wagah Border ceremony.',
+            state: 'Punjab',
+        },
+        {
+            name: 'Bhopal',
+            // imgSrc: BhopalImg,
+            info: 'Bhopal, the capital of Madhya Pradesh, is known for its beautiful lakes, historical sites, and rich cultural heritage. Major attractions include the Upper Lake, Taj-ul-Masajid, and the Bhimbetka rock shelters.',
+            state: 'Madhya Pradesh',
+        },
+        {
+            name: 'Udaipur',
+            // imgSrc: UdaipurImg,
+            info: 'Udaipur, the City of Lakes, is known for its stunning palaces, lakes, and vibrant culture. Key attractions include the City Palace, Lake Pichola, and Jag Mandir.',
+            state: 'Rajasthan',
+        },
+        {
+            name: 'Mysore',
+            // imgSrc: MysoreImg,
+            info: 'Mysore, known as the cultural capital of Karnataka, is famous for its royal heritage, Mysore Palace, and the annual Dussehra festival. Other attractions include the Chamundi Hills and Brindavan Gardens.',
+            state: 'Karnataka',
+        },
+        {
+            name: 'Visakhapatnam',
+            // imgSrc: VisakhapatnamImg,
+            info: 'Visakhapatnam, also known as Vizag, is a coastal city in Andhra Pradesh known for its beaches, ports, and natural beauty. Major attractions include the Kailasagiri Park, RK Beach, and the INS Kursura Submarine Museum.',
+            state: 'Andhra Pradesh',
+        },
+        {
+            name: 'Coimbatore',
+            // imgSrc: CoimbatoreImg,
+            info: 'Coimbatore, a major city in Tamil Nadu, is known for its textile industry, pleasant climate, and educational institutions. Key attractions include the Marudamalai Temple, Gass Forest Museum, and Kovai Kondattam theme park.',
+            state: 'Tamil Nadu',
+        },
+        {
+            name: 'Surat',
+            // imgSrc: SuratImg,
+            info: 'Surat, a major port city in Gujarat, is known for its diamond cutting and polishing industry, textiles, and vibrant markets. Key attractions include the Dumas Beach, Dutch Garden, and the Sardar Patel Museum.',
+            state: 'Gujarat',
+        },
+        {
+            name: 'Patna',
+            // imgSrc: PatnaImg,
+            info: 'Patna, the capital of Bihar, is known for its historical significance, educational institutions, and cultural heritage. Major attractions include the Mahavir Mandir, Patna Museum, and the ruins of Nalanda University.',
+            state: 'Bihar',
+        },
+        {
+            name: 'Ranchi',
+            // imgSrc: RanchiImg,
+            info: 'Ranchi, the capital of Jharkhand, is known for its picturesque waterfalls, pleasant climate, and rich cultural heritage. Key attractions include the Dassam Falls, Jagannath Temple, and the Rock Garden.',
+            state: 'Jharkhand',
+        },
+        {
+            name: 'Gangtok',
+            // imgSrc: GangtokImg,
+            info: 'Gangtok, the capital of Sikkim, is known for its stunning mountain views, Buddhist monasteries, and vibrant culture. Major attractions include the Rumtek Monastery, Tsomgo Lake, and the Nathula Pass.',
+            state: 'Sikkim',
+        },
+        {
+            name: 'Itanagar',
+            // imgSrc: ItanagarImg,
+            info: 'Itanagar, the capital of Arunachal Pradesh, is known for its scenic beauty, historical sites, and rich cultural heritage. Key attractions include the Ita Fort, Ganga Lake, and the Jawaharlal Nehru State Museum.',
+            state: 'Arunachal Pradesh',
         },
     ];
 
