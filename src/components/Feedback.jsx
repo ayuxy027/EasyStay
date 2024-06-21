@@ -1,4 +1,5 @@
 import React from 'react';
+
 function Feedback() {
     return (
         <section className="py-12 bg-gray-50 sm:py-16 lg:py-20">
@@ -12,9 +13,6 @@ function Feedback() {
                         <p className="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 cursor-pointer hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"> Check all 2,157 reviews </p>
                     </div>
                     <div className="relative mt-10 md:mt-24 md:order-2">
-                        <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
-                            <div className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter" style={{ background: 'linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)' }}></div>
-                        </div>
                         <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
                             {testimonials.map((testimonial, index) => (
                                 <div key={index} className="flex flex-col overflow-hidden shadow-xl">
