@@ -10,7 +10,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-md font-body">
+    <nav className="bg-white border-b border-gray-200 shadow-md ">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={Logo} alt="Logo" className="w-auto h-10" />

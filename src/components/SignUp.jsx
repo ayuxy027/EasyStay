@@ -32,11 +32,11 @@ function SignUp() {
   }
 
   return (
-    <div className="flex justify-center min-h-[500px] text-gray-900 bg-gray-100">
-      <div className="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg">
+    <div className="flex justify-center min-h-screen text-gray-900 bg-gray-100">
+      <div className="flex justify-center flex-1 max-w-screen-xl m-5 bg-white shadow-lg sm:m-10 sm:rounded-lg">
         <div className="p-6 lg:w-1/2 xl:w-5/12 sm:p-12">
           <div className="flex flex-col items-center mt-12">
-            <h1 className="text-2xl font-extrabold underline xl:text-3xl font-body decoration-wavy decoration-blue-300 underline-offset-[10px]">
+            <h1 className="text-3xl font-extrabold underline xl:text-4xl decoration-wavy decoration-blue-300 underline-offset-[10px]">
               Sign Up
             </h1>
             <div className="flex-1 w-full mt-8">
@@ -87,6 +87,7 @@ function SignUp() {
                   className={`flex items-center justify-center w-full max-w-xs sm:max-w-full py-4 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out rounded-lg focus:shadow-outline focus:outline-none ${isFormValid ? "bg-blue-500 hover:bg-indigo-700" : "bg-gray-400 cursor-not-allowed"}`}
                   onClick={sendRequest}
                   disabled={!isFormValid}
+                  title={isFormValid ? "" : "Please fill out all fields correctly"}
                 >
                   <FaUserPlus className="w-5 h-5 -ml-2" />
                   <span className="ml-3">Sign Up</span>
@@ -114,8 +115,12 @@ function SignUp() {
             </div>
           </div>
         </div>
-        <div className="flex-1 hidden text-center bg-slate-100 lg:flex">
-          <div className="w-full m-12 bg-center bg-no-repeat bg-contain xl:m-16" style={{ backgroundImage: `url(${SignupImage})` }} />
+        <div className="flex-1 hidden lg:flex">
+          <div className="flex items-center justify-center w-full bg-indigo-100">
+            <div className="max-w-lg">
+              <img className="object-cover object-center" src={SignupImage} alt="Sign Up" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

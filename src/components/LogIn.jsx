@@ -38,11 +38,11 @@ function LogIn() {
   };
 
   return (
-    <div className="flex justify-center min-h-[500px] text-gray-900 bg-gray-100">
-      <div className="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg">
+    <div className="flex justify-center min-h-screen text-gray-900 bg-gray-100">
+      <div className="flex justify-center flex-1 max-w-screen-xl m-5 bg-white shadow-lg sm:m-10 sm:rounded-lg">
         <div className="p-6 lg:w-1/2 xl:w-5/12 sm:p-12">
           <div className="flex flex-col items-center mt-12">
-            <h1 className="text-2xl font-extrabold underline xl:text-3xl font-body decoration-wavy decoration-blue-300 underline-offset-[10px]">
+            <h1 className="text-3xl font-extrabold underline xl:text-4xl decoration-wavy decoration-blue-300 underline-offset-[10px]">
               Log In
             </h1>
             <div className="flex-1 w-full mt-8">
@@ -75,14 +75,15 @@ function LogIn() {
               </div>
               <div className="flex flex-col items-center mt-5 space-y-3">
                 <button
-                  className={`flex items-center justify-center w-full max-w-xs sm:max-w-full py-4 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out rounded-lg focus:shadow-outline focus:outline-none ${isFormValid ? "bg-blue-500 hover:bg-indigo-700" : "bg-gray-400 cursor-not-allowed"}`}
+                  className={`flex items-center justify-center w-full max-w-xs sm:max-w-full py-4 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out rounded-lg focus:shadow-outline focus:outline-none ${isFormValid ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"}`}
                   onClick={handleLogin}
                   disabled={!isFormValid}
+                  title={isFormValid ? "" : "Please fill out all fields correctly"}
                 >
                   <FaSignInAlt className="w-5 h-5 -ml-2" />
                   <span className="ml-3">Log In</span>
                 </button>
-                <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm sm:max-w-full focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm sm:max-w-full focus:outline-none hover:bg-indigo-200 focus:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-2 bg-white rounded-full">
                     <svg className="w-4" viewBox="0 0 533.5 544.3">
                       <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4" />
@@ -93,7 +94,7 @@ function LogIn() {
                   </div>
                   <span className="ml-4">Log In with Google</span>
                 </button>
-                <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm sm:max-w-full focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                <button className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm sm:max-w-full focus:outline-none hover:bg-indigo-200 focus:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="p-1 bg-white rounded-full">
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2">
                       <path d="M22.675 0H1.325C.595 0 0 .595 0 1.325v21.35C0 23.405.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.144v3.24h-1.917c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.468 3.622h-3.119V24h6.116c.73 0 1.324-.595 1.324-1.325V1.325C24 .595 23.405 0 22.675 0z" />
@@ -105,11 +106,9 @@ function LogIn() {
             </div>
           </div>
         </div>
-        <div className="flex-1 hidden text-center bg-slate-100 lg:flex">
-          <div
-            className="relative w-full m-12 bg-center bg-no-repeat bg-contain xl:m-16"
-            style={{ backgroundImage: `url(${LogInImage})` }}
-          >
+        <div className="items-center justify-center flex-1 hidden bg-indigo-100 lg:flex">
+          <div className="max-w-md overflow-hidden rounded-lg">
+            <img className="object-cover object-center w-full h-auto rounded-lg filter" src={LogInImage} alt="Log In" />
           </div>
         </div>
       </div>
