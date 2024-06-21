@@ -1,31 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const facebookUrl = 'https://www.facebook.com/p/Idbook-hotels-100063459046918/';
-const instagramUrl = 'https://www.instagram.com/idbookhotels/';
-const linkedinUrl = 'https://www.linkedin.com/company/idbook-hotels/?originalSubdomain=in';
-const youtubeUrl = 'https://www.youtube.com/channel/UCv6CYWYoDo9Kyow5BMzJfAQ';
-const quoraUrl = 'https://www.quora.com/profile/Idbook-Hotels';
-const pinterestUrl = 'https://in.pinterest.com/idbookhotel/';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaQuora, FaPinterest, FaGooglePlay, FaApple } from 'react-icons/fa';
 
 const Footer = () => {
-
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const hotels = [
+    "Leh", "Ladakh", "Shimla", "Manali", "Jaipur", "Darjeeling", "Jodhpur", "Jaisalmer", "Mount Abu", "Bikaner",
+    "Rameswaram", "Ooty", "Kodaikanal", "Udaipur", "Goa", "Chandigarh", "Amritsar", "Ludhiana", "Delhi", "Gurgaon",
+    "Noida", "Faridabad", "Gaziabaad", "Banglore", "Chennai", "Karnataka", "Jalandhar", "Patiala", "Zirakpur",
+    "Mussoorie", "Macleodganj", "Bhopal", "Khajuraho", "Gwalior", "Ujjain", "Indore", "Hyderabad", "Kolkata",
+    "Mathura", "Dharamshala", "Kasol", "Rishikesh", "Haridwar", "Auli", "Jabalpur", "Kanpur", "Amarkantak", "Rewa",
+    "Katni", "Varanasi", "Vrindavan", "Mumbai", "Dehradun", "Ranikhet", "Kedarnath", "Mukteshwar", "Dhanulti",
+    "Maihar", "Satna", "Nagpur", "Pune", "Munnar", "Lucknow", "Prayagraj", "Chitrakoot", "Himachal", "Lansdowen",
+    "Kathgodam", "Nainital", "Jim Corbett", "Alleppey", "Thekkady", "Kovalam", "Kanyakumari", "Kochi", "Konark",
+    "Puri", "Bhubaneswar"
+  ];
+
+  const renderHotels = () => {
+    const columns = [];
+    for (let i = 0; i < hotels.length; i += 13) {
+      columns.push(
+        <div className="text-left w-1/7" key={i}>
+          <p className="text-sm leading-6">
+            {hotels.slice(i, i + 13).map(hotel => (
+              <React.Fragment key={hotel}>
+                Hotels in {hotel}<br />
+              </React.Fragment>
+            ))}
+          </p>
+        </div>
+      );
+    }
+    return columns;
+  };
+
   return (
-    <div className="mt-20 w-full bg-blue-900 text-white flex flex-col items-center">
-      <div className="text-center py-10">
-        <div className="flex flex-wrap justify-center gap-36">
+    <div className="flex flex-col items-center w-full mt-20 text-white bg-blue-900">
+      <div className="py-10 text-center border-b border-blue-700">
+        <div className="flex flex-wrap justify-center gap-10">
           <div className="mt-8 text-left">
             <h2 className="text-4xl font-bold">Idbook</h2>
-            <p className="text-lg mt-6">
+            <p className="mt-6 text-lg">
               VPO- SARHAUL, SEC-18, <br />
               Gurgaon, <br />
               Haryana, 122001
             </p>
           </div>
+
           <div className="mt-8 text-left">
             <h3 className="text-xl font-bold">Our Services</h3>
             <div className="text-lg leading-8">
@@ -44,6 +68,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+
           <div className="mt-8 text-left">
             <h3 className="text-xl font-bold">Partnership with us</h3>
             <div className="text-lg leading-8">
@@ -60,6 +85,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+
           <div className="mt-8 text-left">
             <h3 className="text-xl font-bold">Policies</h3>
             <div className="text-lg leading-8">
@@ -85,158 +111,56 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-white my-4"></div>
+      <div className="my-4 border-t border-white"></div>
 
-      <div className="text-left w-11/12 md:w-9/12 mx-auto mt-3">
+      <div className="w-11/12 mx-auto mt-3 text-left md:w-9/12">
         <h3 className="text-xl font-bold">Idbook hotels</h3>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-10 mt-4">
-        <div className="text-left">
-          <h3 className="text-xl font-bold">Hotels</h3>
-          <p className="text-lg">
-            Hotels in Leh <br />
-            Hotels in Ladakh<br />
-            Hotels in Shimla<br />
-            Hotels in Manali<br />
-            Hotels in Jaipur<br />
-            hotels in Darjeeling<br />
-            Hotels in Jodhpur<br />
-            Hotels in Jaisalmer<br />
-            hotels in Mount Abu<br />
-            Hotels in Bikaner<br />
-            Hotels in Rameswaram<br />
-            hotels in Ooty<br />
-            Hotels in Kodaikanal<br />
-          </p>
-        </div>
-        <div className="text-left">
-          <p className="text-lg">
-            Hotels in Udaipur<br />
-            Hotels in Goa<br />
-            Hotels in Chandigarh<br />
-            Hotels in Amritsar<br />
-            Hotels in Ludhiana<br />
-            Hotels in Delhi<br />
-            Hotels in Gurgaon<br />
-            Hotels in Noida<br />
-            Hotels in Faridabad<br />
-            Hotels in Gaziabaad<br />
-            Hotels in Banglore<br />
-            Hotels in Chennai<br />
-            Hotels in Karnataka
-          </p>
-        </div>
-        <div className="text-left">
-          <p className="text-lg">
-            Hotels in Jalandhar<br />
-            Hotels in Patiala<br />
-            Hotels in Zirakpur<br />
-            Hotels in Mussoorie<br />
-            Hotels in Macleodganj<br />
-            Hotels in Bhopal<br />
-            Hotels in Khajuraho<br />
-            Hotels in Gwalior<br />
-            Hotels in Ujjain<br />
-            Hotels in Indore<br />
-            Hotels in Hyderabad<br />
-            Hotels in Kolkata<br />
-            Hotels in Mathura
-          </p>
-        </div>
-        <div className="text-left">
-          <p className="text-lg">
-            Hotels in Dharamshala<br />
-            Hotels in Kasol<br />
-            Hotels in Rishikesh<br />
-            Hotels in Haridwar<br />
-            Hotels in Auli<br />
-            Hotels in Jabalpur<br />
-            Hotels in Kanpur<br />
-            Hotels in Amarkantak<br />
-            Hotels in Rewa<br />
-            Hotels in Katni<br />
-            Hotels in Varanasi<br />
-            Hotels in Vrindavan<br />
-            Hotels in Mumbai
-          </p>
-        </div>
-        <div className="text-left">
-          <p className="text-lg">
-            Hotels in Dehradun<br />
-            Hotels in Ranikhet<br />
-            Hotels in Kedarnath<br />
-            Hotels in Mukteshwar<br />
-            Hotels in Dhanulti<br />
-            Hotels in Maihar<br />
-            Hotels in Satna<br />
-            Hotels in Nagpur<br />
-            Hotels in Pune<br />
-            Hotels in Munnar<br />
-            Hotels in Lucknow<br />
-            Hotels in Prayagraj<br />
-            Hotels in Chitrakoot<br />
-          </p>
-        </div>
-        <div className="text-left">
-          <p className="text-lg">
-            Hotels in Himachal<br />
-            Hotels in Lansdowen<br />
-            Hotels in Kathgodam<br />
-            Hotels in Nainital<br />
-            Hotels in Jim Corbett<br />
-            Hotels in Alleppey<br />
-            Hotels in Thekkady<br />
-            Hotels in Kovalam<br />
-            Hotels in Kanyakumari<br />
-            Hotels inKochi<br />
-            Hotels in Konark<br />
-            Hotels in Puri <br />
-            Hotels in Bhubaneswar
-          </p>
-        </div>
+      <div className="flex flex-wrap justify-center gap-6 mt-4">
+        {renderHotels()}
       </div>
 
-      <div className="border-t border-white my-4"></div>
+      <div className="my-4 border-t border-white"></div>
 
-      <div className="flex flex-wrap justify-around items-center gap-8 mt-4 w-11/12 md:w-9/12 mx-auto">
+      <div className="flex flex-wrap items-center justify-around w-11/12 gap-8 mx-auto mt-4 md:w-9/12">
         <div>
           <h3 className="text-xl font-bold">Follow Us</h3>
           <div className="flex gap-4 mt-5">
-            <Link to={facebookUrl}>
-              <i className="fab fa-facebook-f text-2xl"></i>
+            <Link to="https://www.facebook.com/p/Idbook-hotels-100063459046918/">
+              <FaFacebookF className="text-2xl" />
             </Link>
-            <Link to={instagramUrl}>
-              <i className="fab fa-instagram text-2xl"></i>
+            <Link to="https://www.instagram.com/idbookhotels/">
+              <FaInstagram className="text-2xl" />
             </Link>
-            <Link to={linkedinUrl}>
-              <i className="fab fa-linkedin-in text-2xl"></i>
+            <Link to="https://www.linkedin.com/company/idbook-hotels/?originalSubdomain=in">
+              <FaLinkedinIn className="text-2xl" />
             </Link>
-            <Link to={youtubeUrl}>
-              <i className="fab fa-youtube text-2xl"></i>
+            <Link to="https://www.youtube.com/channel/UCv6CYWYoDo9Kyow5BMzJfAQ">
+              <FaYoutube className="text-2xl" />
             </Link>
-            <Link to={quoraUrl}>
-              <i className="fab fa-quora text-2xl"></i>
+            <Link to="https://www.quora.com/profile/Idbook-Hotels">
+              <FaQuora className="text-2xl" />
             </Link>
-            <Link to={pinterestUrl}>
-              <i className="fab fa-pinterest text-2xl"></i>
+            <Link to="https://in.pinterest.com/idbookhotel/">
+              <FaPinterest className="text-2xl" />
             </Link>
           </div>
         </div>
         <div>
           <h3 className="text-xl font-bold">Book Hotel Faster: Download our app</h3>
           <div className="flex gap-4 mt-5">
-            <div className="bg-gray-700 p-2 rounded-lg">
-              <i className="fab fa-google-play text-3xl"></i>
+            <div className="p-2 bg-gray-700 rounded-lg">
+              <FaGooglePlay className="text-3xl" />
             </div>
-            <div className="bg-gray-700 p-2 rounded-lg">
-              <i className="fab fa-apple text-3xl"></i>
+            <div className="p-2 bg-gray-700 rounded-lg">
+              <FaApple className="text-3xl" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white my-4 w-full"></div>
+      <div className="w-full my-4 border-t border-white"></div>
 
       <div className="py-4">
         <h4 className="text-center">© 2022 All Rights Reserved</h4>
