@@ -10,7 +10,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-md ">
+    <nav className="bg-white border-b border-gray-200 shadow-md">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={Logo} alt="Logo" className="w-auto h-10" />
@@ -19,7 +19,7 @@ function NavBar() {
           <Link to="/Login">
             <button
               type="button"
-              className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
+              className="text-white bg-proj transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
             >
               Login
             </button>
@@ -27,7 +27,7 @@ function NavBar() {
           <Link to="/signup">
             <button
               type="button"
-              className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
+              className="text-white bg-proj transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
             >
               Sign Up
             </button>

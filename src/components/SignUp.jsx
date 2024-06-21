@@ -36,7 +36,7 @@ function SignUp() {
       <div className="flex justify-center flex-1 max-w-screen-xl m-5 bg-white shadow-lg sm:m-10 sm:rounded-lg">
         <div className="p-6 lg:w-1/2 xl:w-5/12 sm:p-12">
           <div className="flex flex-col items-center mt-12">
-            <h1 className="text-3xl font-extrabold underline xl:text-4xl decoration-wavy decoration-blue-300 underline-offset-[10px]">
+            <h1 className="text-3xl font-extrabold text-transparent xl:text-4xl bg-proj bg-clip-text ">
               Sign Up
             </h1>
             <div className="flex-1 w-full mt-8">
