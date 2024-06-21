@@ -11,7 +11,6 @@ const pinterestUrl = 'https://in.pinterest.com/idbookhotel/';
 const Footer = () => {
 
   const handleLinkClick = () => {
-    // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
