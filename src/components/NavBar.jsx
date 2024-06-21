@@ -27,7 +27,7 @@ function NavBar() {
           <Link to="/signup">
             <button
               type="button"
-              className="px-4 py-2 font-medium text-center text-white transition-transform duration-200 ease-in-out bg-green-600 rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-green-300"
+              className="text-white bg-blue-600 transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-[10px]"
             >
               Sign Up
             </button>
