@@ -3,7 +3,7 @@
     width: 8px;
     height: 50px;
     background-color: #b5cae9;
-    animation: blink 1s step-end infinite;
+    animation: blink 0.8s step-end infinite;
     transform: translateY(13px);
     margin-left: 5px; /* Add space after the cursor */
 }
