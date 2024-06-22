@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full mt-20 text-white bg-blue-900">
+    <div className="flex flex-col items-center w-full text-white bg-blue-900">
       <div className="py-10 text-center border-b border-blue-700">
         <div className="flex flex-wrap justify-center gap-10">
           <div className="mt-8 text-left">
@@ -93,10 +93,10 @@ const Footer = () => {
                 <Link to="/faq" className="hover:underline" onClick={handleLinkClick}>
                   FAQ <br />
                 </Link>
-                <Link to="/contactus" className="hover:underline">
+                <Link to="/support" className="hover:underline">
                   Contact Us <br />
                 </Link>
-                <Link to="/return-and-refund-policy" className="hover:underline" onClick={handleLinkClick}>
+                <Link to="/refund-policy" className="hover:underline" onClick={handleLinkClick}>
                   Cancellation & Refund Policy <br />
                 </Link>
                 <Link to="/privacy-policy" className="hover:underline" onClick={handleLinkClick}>
@@ -111,8 +111,6 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="my-4 border-t border-white"></div>
-
       <div className="w-11/12 mx-auto mt-3 text-left md:w-9/12">
         <h3 className="text-xl font-bold">Idbook hotels</h3>
       </div>
@@ -120,8 +118,6 @@ const Footer = () => {
       <div className="flex flex-wrap justify-center gap-6 mt-4">
         {renderHotels()}
       </div>
-
-      <div className="my-4 border-t border-white"></div>
 
       <div className="flex flex-wrap items-center justify-around w-11/12 gap-8 mx-auto mt-4 md:w-9/12">
         <div>
@@ -160,10 +156,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full my-4 border-t border-white"></div>
-
       <div className="py-4">
-        <h4 className="text-center">© 2022 All Rights Reserved</h4>
+        <h4 className="text-center">© 2024 All Rights Reserved</h4>
       </div>
     </div>
   );
