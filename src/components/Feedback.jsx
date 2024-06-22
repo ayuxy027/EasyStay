@@ -15,8 +15,8 @@ function Feedback() {
                     <div className="relative mt-10 md:mt-24 md:order-2">
                         <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
                             {testimonials.map((testimonial, index) => (
-                                <div key={index} className="flex flex-col overflow-hidden shadow-xl">
-                                    <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
+                                <div key={index} className="flex flex-col overflow-hidden transition-transform duration-300 transform bg-white shadow-xl hover:scale-105">
+                                    <div className="flex flex-col justify-between flex-1 p-6 lg:py-8 lg:px-7">
                                         <div className="flex-1">
                                             <div className="flex items-center">
                                                 {[...Array(5)].map((_, index) => (

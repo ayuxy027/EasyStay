@@ -13,7 +13,6 @@ const HomePage = () => {
       <Destination/>
       <Services />
       <Feedback />
-      <Newsletter />
     </div>
   )
 }
