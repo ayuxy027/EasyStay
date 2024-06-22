@@ -6,7 +6,7 @@ function Feedback() {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center">
                     <div className="text-center">
-                        <h2 className="mt-4 text-3xl font-bold text-transparent text-gray-900 sm:text-4xl xl:text-5xl font-pj bg-proj bg-clip-text">Testimonials and Feedback</h2>
+                        <h2 className="mt-4 text-3xl font-semibold text-transparent text-gray-900 sm:text-4xl xl:text-5xl font-pj bg-proj bg-clip-text">Testimonials and Feedback</h2>
                         <p className="text-lg font-medium text-gray-600 font-pj mt-[10px] md:text-lg sm:text-sm">Enhancing Every Experience</p>
                     </div>
                     <div className="mt-8 text-center md:mt-16 md:order-3">
