@@ -9,26 +9,6 @@ import ShimlaImg from '../images/Destinations/Shimla.jpg';
 import JaipurImg from '../images/Destinations/Jaipur.jpg';
 import ManaliImg from '../images/Destinations/Manali.png';
 import BhubaneshwarImg from '../images/Destinations/Bhubaneshwar.jpg';
-// import BengaluruImg from '../images/Destinations/Bengaluru.jpg';
-// import HyderabadImg from '../images/Destinations/Hyderabad.jpg';
-// import ChandigarhImg from '../images/Destinations/Chandigarh.jpg';
-// import LucknowImg from '../images/Destinations/Lucknow.jpg';
-// import PuneImg from '../images/Destinations/Pune.jpg';
-// import ThiruvananthapuramImg from '../images/Destinations/Thiruvananthapuram.jpg';
-// import AhmedabadImg from '../images/Destinations/Ahmedabad.jpg';
-// import GuwahatiImg from '../images/Destinations/Guwahati.jpg';
-// import VaranasiImg from '../images/Destinations/Varanasi.jpg';
-// import AmritsarImg from '../images/Destinations/Amritsar.jpg';
-// import BhopalImg from '../images/Destinations/Bhopal.jpg';
-// import UdaipurImg from '../images/Destinations/Udaipur.jpg';
-// import MysoreImg from '../images/Destinations/Mysore.jpg';
-// import VisakhapatnamImg from '../images/Destinations/Visakhapatnam.jpg';
-// import CoimbatoreImg from '../images/Destinations/Coimbatore.jpg';
-// import SuratImg from '../images/Destinations/Surat.jpg';
-// import PatnaImg from '../images/Destinations/Patna.jpg';
-// import RanchiImg from '../images/Destinations/Ranchi.jpg';
-// import GangtokImg from '../images/Destinations/Gangtok.jpg';
-// import ItanagarImg from '../images/Destinations/Itanagar.jpg';
 
 function Destination() {
     const [selectedDestination, setSelectedDestination] = useState(null);
@@ -92,128 +72,7 @@ function Destination() {
             info: 'Bhubaneshwar, the capital of Odisha, is known for its ancient temples and rich cultural heritage. The city is home to the Lingaraj Temple, Udayagiri and Khandagiri Caves, and the Odisha State Museum.',
             state: 'Odisha',
         },
-        {
-            name: 'Bengaluru',
-            // imgSrc: BengaluruImg,
-            info: 'Bengaluru, the Silicon Valley of India, is known for its pleasant climate, lush parks, and vibrant nightlife. Key attractions include Lalbagh Botanical Garden, Bangalore Palace, and a thriving tech industry.',
-            state: 'Karnataka',
-        },
-        {
-            name: 'Hyderabad',
-            // imgSrc: HyderabadImg,
-            info: 'Hyderabad, the City of Pearls, is known for its rich history, magnificent palaces, and delicious cuisine. Visitors can explore the Charminar, Golconda Fort, and Ramoji Film City.',
-            state: 'Telangana',
-        },
-        {
-            name: 'Chandigarh',
-            // imgSrc: ChandigarhImg,
-            info: 'Chandigarh, a union territory and the capital of Punjab and Haryana, is known for its modern architecture and urban design. Key attractions include the Rock Garden, Sukhna Lake, and the Capitol Complex.',
-            state: 'Chandigarh',
-        },
-        {
-            name: 'Lucknow',
-            // imgSrc: LucknowImg,
-            info: 'Lucknow, the City of Nawabs, is known for its rich history, exquisite cuisine, and beautiful architecture. Major attractions include Bara Imambara, Rumi Darwaza, and Hazratganj market.',
-            state: 'Uttar Pradesh',
-        },
-        {
-            name: 'Pune',
-            // imgSrc: PuneImg,
-            info: 'Pune, the cultural capital of Maharashtra, is known for its educational institutions, historical sites, and vibrant nightlife. Key attractions include Shaniwar Wada, Aga Khan Palace, and Osho Ashram.',
-            state: 'Maharashtra',
-        },
-        {
-            name: 'Thiruvananthapuram',
-            // imgSrc: ThiruvananthapuramImg,
-            info: 'Thiruvananthapuram, the capital of Kerala, is known for its serene beaches, historical landmarks, and vibrant cultural scene. Major attractions include the Padmanabhaswamy Temple, Kovalam Beach, and the Napier Museum.',
-            state: 'Kerala',
-        },
-        {
-            name: 'Ahmedabad',
-            // imgSrc: AhmedabadImg,
-            info: 'Ahmedabad, a major city in Gujarat, is known for its rich cultural heritage, textile industry, and historic sites. Key attractions include the Sabarmati Ashram, Kankaria Lake, and the vibrant old city area.',
-            state: 'Gujarat',
-        },
-        {
-            name: 'Guwahati',
-            // imgSrc: GuwahatiImg,
-            info: 'Guwahati, the gateway to Northeast India, is known for its ancient temples, scenic beauty, and vibrant markets. Major attractions include the Kamakhya Temple, Umananda Island, and the Assam State Museum.',
-            state: 'Assam',
-        },
-        {
-            name: 'Varanasi',
-            // imgSrc: VaranasiImg,
-            info: 'Varanasi, one of the oldest cities in the world, is known for its spiritual significance, ghats, and temples. Key attractions include the Kashi Vishwanath Temple, Dashashwamedh Ghat, and the evening Ganga Aarti.',
-            state: 'Uttar Pradesh',
-        },
-        {
-            name: 'Amritsar',
-            // imgSrc: AmritsarImg,
-            info: 'Amritsar, the spiritual center of Sikhism, is known for the Golden Temple, its vibrant markets, and rich history. Visitors can also explore the Jallianwala Bagh and the Wagah Border ceremony.',
-            state: 'Punjab',
-        },
-        {
-            name: 'Bhopal',
-            // imgSrc: BhopalImg,
-            info: 'Bhopal, the capital of Madhya Pradesh, is known for its beautiful lakes, historical sites, and rich cultural heritage. Major attractions include the Upper Lake, Taj-ul-Masajid, and the Bhimbetka rock shelters.',
-            state: 'Madhya Pradesh',
-        },
-        {
-            name: 'Udaipur',
-            // imgSrc: UdaipurImg,
-            info: 'Udaipur, the City of Lakes, is known for its stunning palaces, lakes, and vibrant culture. Key attractions include the City Palace, Lake Pichola, and Jag Mandir.',
-            state: 'Rajasthan',
-        },
-        {
-            name: 'Mysore',
-            // imgSrc: MysoreImg,
-            info: 'Mysore, known as the cultural capital of Karnataka, is famous for its royal heritage, Mysore Palace, and the annual Dussehra festival. Other attractions include the Chamundi Hills and Brindavan Gardens.',
-            state: 'Karnataka',
-        },
-        {
-            name: 'Visakhapatnam',
-            // imgSrc: VisakhapatnamImg,
-            info: 'Visakhapatnam, also known as Vizag, is a coastal city in Andhra Pradesh known for its beaches, ports, and natural beauty. Major attractions include the Kailasagiri Park, RK Beach, and the INS Kursura Submarine Museum.',
-            state: 'Andhra Pradesh',
-        },
-        {
-            name: 'Coimbatore',
-            // imgSrc: CoimbatoreImg,
-            info: 'Coimbatore, a major city in Tamil Nadu, is known for its textile industry, pleasant climate, and educational institutions. Key attractions include the Marudamalai Temple, Gass Forest Museum, and Kovai Kondattam theme park.',
-            state: 'Tamil Nadu',
-        },
-        {
-            name: 'Surat',
-            // imgSrc: SuratImg,
-            info: 'Surat, a major port city in Gujarat, is known for its diamond cutting and polishing industry, textiles, and vibrant markets. Key attractions include the Dumas Beach, Dutch Garden, and the Sardar Patel Museum.',
-            state: 'Gujarat',
-        },
-        {
-            name: 'Patna',
-            // imgSrc: PatnaImg,
-            info: 'Patna, the capital of Bihar, is known for its historical significance, educational institutions, and cultural heritage. Major attractions include the Mahavir Mandir, Patna Museum, and the ruins of Nalanda University.',
-            state: 'Bihar',
-        },
-        {
-            name: 'Ranchi',
-            // imgSrc: RanchiImg,
-            info: 'Ranchi, the capital of Jharkhand, is known for its picturesque waterfalls, pleasant climate, and rich cultural heritage. Key attractions include the Dassam Falls, Jagannath Temple, and the Rock Garden.',
-            state: 'Jharkhand',
-        },
-        {
-            name: 'Gangtok',
-            // imgSrc: GangtokImg,
-            info: 'Gangtok, the capital of Sikkim, is known for its stunning mountain views, Buddhist monasteries, and vibrant culture. Major attractions include the Rumtek Monastery, Tsomgo Lake, and the Nathula Pass.',
-            state: 'Sikkim',
-        },
-        {
-            name: 'Itanagar',
-            // imgSrc: ItanagarImg,
-            info: 'Itanagar, the capital of Arunachal Pradesh, is known for its scenic beauty, historical sites, and rich cultural heritage. Key attractions include the Ita Fort, Ganga Lake, and the Jawaharlal Nehru State Museum.',
-            state: 'Arunachal Pradesh',
-        },
     ];
-
 
     const handleClick = (index) => {
         setSelectedDestination(selectedDestination === index ? null : index);
@@ -258,7 +117,7 @@ function Destination() {
                 </div>
 
                 {/* Filter, Sort, and Search Bar */}
-                <div className="flex justify-center mb-8 space-x-4">
+                <div className="flex flex-col items-center justify-center mb-8 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                     <div>
                         <label htmlFor="stateFilter" className="mr-2 font-medium text-gray-900">Filter by State:</label>
                         <select id="stateFilter" value={selectedState} onChange={handleStateChange} className="px-2 py-1 border rounded-md focus:outline-none">
@@ -307,22 +166,33 @@ function Destination() {
                                     View Details <BsArrowRight className="inline ml-1" />
                                 </button>
                                 <div
-                                    className={`absolute inset-0 bg-gray-100 bg-opacity-90 p-6 rounded transition-transform duration-300 ${selectedDestination === index ? 'translate-y-0' : 'translate-y-full'}`}
-                                    style={{ height: '100%' }}
+                                    className={`absolute inset-0 bg-gray-100 bg-opacity-90 p-6 rounded transition-transform duration-300 ${selectedDestination === index ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+                                    style={{ zIndex: selectedDestination === index ? 10 : -1 }}
                                 >
-                                    <button className="absolute p-2 text-white transition duration-300 ease-in-out bg-gray-800 rounded-full right-6 top-6 focus:outline-none" onClick={() => handleClick(index)}>
-                                        <BsX className="text-xl" />
+                                    <button
+                                        className="absolute top-0 right-0 p-2 text-xl text-gray-900 bg-white rounded-full focus:outline-none"
+                                        onClick={() => handleClick(index)}
+                                    >
+                                        <BsX />
                                     </button>
-                                    <p className="mt-4 text-base leading-relaxed text-gray-800">{destination.info}</p>
+                                    <h2 className="mb-4 text-xl font-semibold text-gray-900 title-font">{destination.name}, {destination.state}</h2>
+                                    <p className="leading-relaxed text-gray-700">{destination.info}</p>
+                                    <button className="px-4 py-2 mt-4 text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none">
+                                        Close
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
                 {visibleCount < sortedDestinations.length && (
                     <div className="flex justify-center mt-8">
-                        <button onClick={handleViewMore} className="px-6 py-2 font-semibold text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none">View More</button>
+                        <button
+                            onClick={handleViewMore}
+                            className="px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out rounded-full bg-proj hover:bg-proj-light focus:outline-none"
+                        >
+                            View More
+                        </button>
                     </div>
                 )}
             </div>

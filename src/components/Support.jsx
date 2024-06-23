@@ -24,7 +24,7 @@ const Support = () => {
 
   return (
     <div className="bg-white">
-      <div className="max-w-3xl mx-auto mt-10 text-center">
+      <div className="max-w-3xl mx-auto mt-[80px] text-center">
         <h2
           className="mt-8 text-3xl font-bold leading-tight text-transparent text-black sm:text-4xl lg:text-5xl bg-proj bg-clip-text md:mt-6"
         >
