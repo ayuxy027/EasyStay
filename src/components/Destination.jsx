@@ -9,8 +9,6 @@ import ShimlaImg from '../images/Destinations/Shimla.jpg';
 import JaipurImg from '../images/Destinations/Jaipur.jpg';
 import ManaliImg from '../images/Destinations/Manali.png';
 import BhubaneshwarImg from '../images/Destinations/Bhubaneshwar.jpg';
-
-// Additional images
 // import BengaluruImg from '../images/Destinations/Bengaluru.jpg';
 // import HyderabadImg from '../images/Destinations/Hyderabad.jpg';
 // import ChandigarhImg from '../images/Destinations/Chandigarh.jpg';
@@ -36,6 +34,7 @@ function Destination() {
     const [selectedDestination, setSelectedDestination] = useState(null);
     const [selectedState, setSelectedState] = useState(""); // State for selected filter
     const [sortOrder, setSortOrder] = useState(""); // State for sorting
+    const [searchQuery, setSearchQuery] = useState(""); // State for search
     const [visibleCount, setVisibleCount] = useState(6); // State for visible cards
 
     const destinations = [
@@ -215,6 +214,7 @@ function Destination() {
         },
     ];
 
+
     const handleClick = (index) => {
         setSelectedDestination(selectedDestination === index ? null : index);
     };
@@ -227,11 +227,20 @@ function Destination() {
         setSortOrder(event.target.value);
     };
 
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
     const handleViewMore = () => {
         setVisibleCount(prevCount => prevCount + 3);
     };
 
-    const sortedDestinations = [...destinations].sort((a, b) => {
+    const filteredDestinations = destinations.filter(dest =>
+        (selectedState === '' || dest.state === selectedState) &&
+        (searchQuery === '' || dest.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+
+    const sortedDestinations = filteredDestinations.sort((a, b) => {
         if (sortOrder === 'name') {
             return a.name.localeCompare(b.name);
         } else if (sortOrder === 'state') {
@@ -239,10 +248,6 @@ function Destination() {
         }
         return 0;
     });
-
-    const filteredDestinations = sortedDestinations.filter(dest => 
-        selectedState === '' || dest.state === selectedState
-    );
 
     return (
         <section className="py-12 bg-white sm:py-16 lg:py-20">
@@ -252,32 +257,45 @@ function Destination() {
                     <p className="mt-4 mb-12 text-lg leading-7 text-gray-600 sm:mt-8 font-pj">Explore some of the most popular travel destinations in India.</p>
                 </div>
 
-                {/* State filter dropdown */}
-                <div className="flex justify-center mb-8">
-                    <label htmlFor="stateFilter" className="mr-2 font-medium text-gray-900">Filter by State:</label>
-                    <select id="stateFilter" value={selectedState} onChange={handleStateChange} className="px-1 py-1 border rounded-md focus:outline-none">
-                        <option value="">All States</option>
-                        {Array.from(new Set(destinations.map(dest => dest.state))).map((state, index) => (
-                            <option key={index} value={state}>{state}</option>
-                        ))}
-                    </select>
-                </div>
+                {/* Filter, Sort, and Search Bar */}
+                <div className="flex justify-center mb-8 space-x-4">
+                    <div>
+                        <label htmlFor="stateFilter" className="mr-2 font-medium text-gray-900">Filter by State:</label>
+                        <select id="stateFilter" value={selectedState} onChange={handleStateChange} className="px-2 py-1 border rounded-md focus:outline-none">
+                            <option value="">All States</option>
+                            {Array.from(new Set(destinations.map(dest => dest.state))).map((state, index) => (
+                                <option key={index} value={state}>{state}</option>
+                            ))}
+                        </select>
+                    </div>
 
-                {/* Sort dropdown */}
-                <div className="flex justify-center mb-8">
-                    <label htmlFor="sortOrder" className="mr-2 font-medium text-gray-900">Sort by:</label>
-                    <select id="sortOrder" value={sortOrder} onChange={handleSortChange} className="px-1 py-1 border rounded-md focus:outline-none">
-                        <option value="">Default</option>
-                        <option value="name">Name</option>
-                        <option value="state">State</option>
-                    </select>
+                    <div>
+                        <label htmlFor="sortOrder" className="mr-2 font-medium text-gray-900">Sort by:</label>
+                        <select id="sortOrder" value={sortOrder} onChange={handleSortChange} className="px-2 py-1 border rounded-md focus:outline-none">
+                            <option value="">Default</option>
+                            <option value="name">Name</option>
+                            <option value="state">State</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label htmlFor="searchQuery" className="ml-2 mr-2 font-medium text-gray-900">Search City</label>
+                        <input
+                            type="text"
+                            id="searchQuery"
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            className="px-2 py-1 border rounded-md focus:outline-none"
+                            placeholder="Search by name"
+                        />
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {filteredDestinations.slice(0, visibleCount).map((destination, index) => (
+                    {sortedDestinations.slice(0, visibleCount).map((destination, index) => (
                         <div key={index} className="p-4">
-                            <div 
-                                className="relative p-6 overflow-hidden transition-transform duration-300 transform bg-gray-100 rounded-lg shadow-md cursor-pointer hover:shadow-lg hover:scale-105" 
+                            <div
+                                className="relative p-6 overflow-hidden transition-transform duration-300 transform bg-gray-100 rounded-lg shadow-md cursor-pointer hover:shadow-lg hover:scale-105"
                                 onClick={() => handleClick(index)}
                             >
                                 <div
@@ -292,25 +310,19 @@ function Destination() {
                                     className={`absolute inset-0 bg-gray-100 bg-opacity-90 p-6 rounded transition-transform duration-300 ${selectedDestination === index ? 'translate-y-0' : 'translate-y-full'}`}
                                     style={{ height: '100%' }}
                                 >
-                                    <button className="absolute p-2 text-white transition duration-300 ease-in-out rounded-full top-4 right-4 bg-proj focus:outline-none hover:scale-105" onClick={() => handleClick(null)}>
-                                        <BsX className="w-5 h-5" />
+                                    <button className="absolute p-2 text-white transition duration-300 ease-in-out bg-gray-800 rounded-full right-6 top-6 focus:outline-none" onClick={() => handleClick(index)}>
+                                        <BsX className="text-xl" />
                                     </button>
-                                    <p className="mt-4 text-lg text-gray-600 break-words">{destination.info}</p>
-                                    <button className="px-4 py-2 mt-6 font-semibold text-white transition duration-300 ease-in-out rounded-md bg-proj focus:outline-none hover:scale-105">Book Now</button>
+                                    <p className="mt-4 text-base leading-relaxed text-gray-800">{destination.info}</p>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {visibleCount < filteredDestinations.length && (
+                {visibleCount < sortedDestinations.length && (
                     <div className="flex justify-center mt-8">
-                        <button 
-                            className="px-6 py-2 font-semibold text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none hover:scale-105"
-                            onClick={handleViewMore}
-                        >
-                            View More
-                        </button>
+                        <button onClick={handleViewMore} className="px-6 py-2 font-semibold text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none">View More</button>
                     </div>
                 )}
             </div>
