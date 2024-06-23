@@ -24,20 +24,18 @@ const Support = () => {
 
   return (
     <div className="bg-white">
-      <div className="max-w-3xl mt-10 mx-auto text-center">
+      <div className="max-w-3xl mx-auto mt-10 text-center">
         <h2
-          className="text-3xl font-bold leading-tight text-transparent
-                     text-black sm:text-4xl lg:text-5xl 
-                     bg-proj bg-clip-text"
+          className="text-3xl font-bold leading-tight text-transparent text-black sm:text-4xl lg:text-5xl bg-proj bg-clip-text mt[30px] md:mt-[20px]"
         >
           Contact Us
         </h2>
-        <p className="mt-1 leading-tight  text-black text-transparent bg-proj bg-clip-text">
+        <p className="mt-[20px] leading-tight text-slate-600">
           We're here to assist you with your stay.
         </p>
       </div>
 
-      <div className="max-w-5xl px-4 py-6 mx-auto xl:px-0 lg:py-12">
+      <div className="max-w-5xl px-4 py-6 mx-auto xl:px-0 lg:py-12 mt-[80px] md:mt-[60px] sm:mt-[40px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
           <div className="pb-6 mb-6 border-b border-gray-300 md:order-2 md:border-b-0 md:pb-0 md:mb-0">
             <form onSubmit={handleSubmit}>
@@ -170,7 +168,7 @@ const Support = () => {
                 <p className="mt-5">
                   <button
                     type="submit"
-                    className="text-white bg-proj transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-3 py-2 inline-flex items-center gap-x-2"
+                    className="inline-flex items-center px-3 py-2 font-medium text-white transition-transform duration-200 ease-in-out rounded-full bg-proj hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 gap-x-2"
                   >
                     Submit
                     <svg

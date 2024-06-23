@@ -70,7 +70,7 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <Link to="#" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
+              <Link to="/pro" className="block px-3 py-2 text-lg text-gray-900 transition-colors duration-200 rounded hover:text-blue-700 md:p-0 sm:hover:bg-blue-700 sm:hover:text-white">
                 PRO
               </Link>
             </li>

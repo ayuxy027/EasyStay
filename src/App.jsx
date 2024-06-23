@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar.jsx";
 import NavBar from "./components/NavBar.jsx";
 import HomePage from "./pages/HomePage.jsx"; 
 import SignUp from "./components/SignUp.jsx";
@@ -10,6 +9,7 @@ import SupportPage from "./pages/SupportPage.jsx";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import FooterPage from "./pages/FooterPage.jsx";
+import Pro from "./components/Pro.jsx";
 
 library.add(fab);
 
@@ -26,6 +26,7 @@ function App() {
       <Route path="/get-franchise"/>
       <Route path="/faq" element={<FAQPage/>}/>
       <Route path="/support" element={<SupportPage/>}/>
+      <Route path="/pro" element={<Pro/>}/>
       </Routes>
       <FooterPage/>
     </>
