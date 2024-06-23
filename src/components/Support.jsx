@@ -26,16 +26,16 @@ const Support = () => {
     <div className="bg-white">
       <div className="max-w-3xl mx-auto mt-10 text-center">
         <h2
-          className="text-3xl font-bold leading-tight text-transparent text-black sm:text-4xl lg:text-5xl bg-proj bg-clip-text mt[30px] md:mt-[20px]"
+          className="mt-8 text-3xl font-bold leading-tight text-transparent text-black sm:text-4xl lg:text-5xl bg-proj bg-clip-text md:mt-6"
         >
           Contact Us
         </h2>
-        <p className="mt-[20px] leading-tight text-slate-600">
+        <p className="mt-5 leading-tight text-slate-600">
           We're here to assist you with your stay.
         </p>
       </div>
 
-      <div className="max-w-5xl px-4 py-6 mx-auto xl:px-0 lg:py-12 mt-[80px] md:mt-[60px] sm:mt-[40px]">
+      <div className="max-w-5xl px-4 py-6 mx-auto mt-20 xl:px-0 lg:py-12 md:mt-14 sm:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
           <div className="pb-6 mb-6 border-b border-gray-300 md:order-2 md:border-b-0 md:pb-0 md:mb-0">
             <form onSubmit={handleSubmit}>
@@ -208,8 +208,8 @@ const Support = () => {
               </svg>
               <div>
                 <h3 className="text-lg font-medium text-gray-800">Address</h3>
-                <p className="text-gray-600">
-                  Sarhaul,Sec-18, Gurgaon, Haryana, 122001
+                <p className="mt-1 text-gray-700">
+                  Pune, Maharashtra 441101, India
                 </p>
               </div>
             </div>
@@ -224,14 +224,15 @@ const Support = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-                <path d="M21 16v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-                <path d="M3 12h18" />
-                <path d="M7 12l5 5 5-5" />
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
               </svg>
               <div>
-                <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                <p className="text-gray-600">Support@idbookhotels.com</p>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Email
+                </h3>
+                <p className="mt-1 text-gray-700">
+                  support@easystay.co
+                </p>
               </div>
             </div>
 
@@ -245,23 +246,42 @@ const Support = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.83 19.83 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12 1 .51 2.05 1.09 2.92a2 2 0 0 1-.45 2.32L10 12.54a16 16 0 0 0 6.09 6.09l2.58-2.58a2 2 0 0 1 2.32-.45 11.55 11.55 0 0 0 2.92 1.09 2 2 0 0 1 1.72 2.04z" />
+                <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
               </svg>
               <div>
-                <h3 className="text-lg font-medium text-gray-800">Phone</h3>
-                <p className="text-gray-600">+91 8645663143</p>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Help Center
+                </h3>
+                <p className="mt-1 text-gray-700">
+                  We're here to help you with any queries or concerns
+                  regarding your stay.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            to="/faq"
-            className="text-sm underline text-sky-600 md:text-base"
-          >
-            See FAQs
-          </Link>
+            <div>
+              <Link
+                to="/home"
+                className="inline-flex items-center gap-2 text-transparent bg-proj bg-clip-text hover:underline"
+              >
+                Go to Home-Page
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 12h14m-7-7 7 7-7 7"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

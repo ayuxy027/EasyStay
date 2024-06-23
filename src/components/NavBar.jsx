@@ -13,7 +13,7 @@ function NavBar() {
     <nav className="bg-white border-b border-gray-200 shadow-md">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={Logo} alt="Logo" className="w-auto h-10" />
+          <h1 className='className="w-auto h-10 text-3xl font-bold text-transparent bg-proj bg-clip-text font-body '>Easy Stay</h1>
         </Link>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <Link to="/Login">
