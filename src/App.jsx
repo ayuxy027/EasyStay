@@ -17,7 +17,6 @@ library.add(fab);
 function App() {
   return (
     <>
-      <NavBar/> 
       <Routes>
       <Route path="/" element={<HomePage/>}></Route>
       <Route path="/signup" element={<SignUp />} />

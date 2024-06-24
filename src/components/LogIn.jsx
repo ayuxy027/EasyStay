@@ -1,8 +1,14 @@
 import React from 'react';
 import AuthPage from '../pages/AuthPage';
+import NavBar from './NavBar';
 
 function LogIn() {
-  return <AuthPage isSignUp={false} />;
+  return (
+    <>
+    <NavBar />
+    <AuthPage isSignUp={false} />;
+    </>
+  )
 }
 
 export default LogIn;

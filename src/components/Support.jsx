@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const Support = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,8 @@ const Support = () => {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="bg-white">
       <div className="max-w-3xl mx-auto mt-[80px] text-center">
         <h2
@@ -285,6 +288,7 @@ const Support = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
