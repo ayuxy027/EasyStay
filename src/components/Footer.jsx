@@ -36,7 +36,6 @@ const Footer = () => {
             </p>
           </div>
         </div>
-
         <div className="mt-8 text-left">
           <h3 className="text-xl font-bold">Partnership with us</h3>
           <div className="text-lg leading-8">

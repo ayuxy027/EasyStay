@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsArrowRight, BsX } from 'react-icons/bs';
+import { BsArrowRight } from 'react-icons/bs'; // Remove BsX as it's no longer used
 import MumbaiImg from '../images/Destinations/Mumbai.jpg';
 import AgraImg from '../images/Destinations/Agra.jpg';
 import OotyImg from '../images/Destinations/Ooty.jpg';
@@ -170,16 +170,13 @@ function Destination() {
                                     style={{ zIndex: selectedDestination === index ? 10 : -1 }}
                                 >
                                     <button
-                                        className="absolute top-0 right-0 p-2 text-xl text-gray-900 bg-white rounded-full focus:outline-none"
+                                        className="px-4 py-2 mt-4 text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none"
                                         onClick={() => handleClick(index)}
                                     >
-                                        <BsX />
+                                        Book Now
                                     </button>
                                     <h2 className="mb-4 text-xl font-semibold text-gray-900 title-font">{destination.name}, {destination.state}</h2>
                                     <p className="leading-relaxed text-gray-700">{destination.info}</p>
-                                    <button className="px-4 py-2 mt-4 text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none">
-                                        Close
-                                    </button>
                                 </div>
                             </div>
                         </div>
