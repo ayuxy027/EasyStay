@@ -169,14 +169,17 @@ function Destination() {
                                     className={`absolute inset-0 bg-gray-100 bg-opacity-90 p-6 rounded transition-transform duration-300 ${selectedDestination === index ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
                                     style={{ zIndex: selectedDestination === index ? 10 : -1 }}
                                 >
-                                    <button
+                                    {/* <button
                                         className="px-4 py-2 mt-4 text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none"
                                         onClick={() => handleClick(index)}
                                     >
                                         Book Now
-                                    </button>
+                                    </button> */}
                                     <h2 className="mb-4 text-xl font-semibold text-gray-900 title-font">{destination.name}, {destination.state}</h2>
                                     <p className="leading-relaxed text-gray-700">{destination.info}</p>
+                                    <button className="px-4 py-2 mt-4 text-white transition duration-300 ease-in-out rounded-full bg-proj focus:outline-none">
+                                        Book Now
+                                    </button>
                                 </div>
                             </div>
                         </div>
