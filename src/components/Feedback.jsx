@@ -53,19 +53,19 @@ function Feedback() {
 
 const testimonials = [
     {
-        quote: "“Hassle-free vacation to the beautiful valleys of Kashmir, all thanks to the impeccable services provided by Idbook hotels.”",
+        quote: "“Hassle-free vacation to the beautiful valleys of Kashmir, all thanks to the impeccable services provided by Easy Stay hotels.”",
         name: "Mayank & Chanchal",
         position: "Residents of Delhi",
         image: "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png"
     },
     {
-        quote: "“Experienced the breathtaking beauty of Kashmir with Idbook hotels, making it an absolutely perfect trip.”",
+        quote: "“Experienced the breathtaking beauty of Kashmir with Easy Stay hotels, making it an absolutely perfect trip.”",
         name: "Hardeep & Simran",
         position: "Residents of Punjab",
         image: "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png"
     },
     {
-        quote: "“Thanks to Idbook hotels for a hassle free vacation. Anyone out there who is planning for a vacation, Idbook hotels is your man!”",
+        quote: "“Thanks to Easy Stay hotels for a hassle free vacation. Anyone out there who is planning for a vacation, Easy Stay hotels is your man!”",
         name: "Gauhar Khan",
         position: "Resident of Indore",
         image: "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png"
