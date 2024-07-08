@@ -123,7 +123,7 @@ function SearchBar({ onSearch }) {
             type="button"
             className={`px-3 sm:px-4 py-2 sm:py-2 text-sm sm:text-base font-medium rounded-l-lg transition-all duration-300 ${
               bookingType === 'daily' ? 'bg-gradient-to-r from-[#2b6cb0] to-[#3182ce] text-white' : 'bg-white text-gray-700'
-            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700`}
+            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2`}
             onClick={() => setBookingType('daily')}
           >
             Daily Booking
@@ -132,7 +132,7 @@ function SearchBar({ onSearch }) {
             type="button"
             className={`px-3 sm:px-4 py-2 sm:py-2 text-sm sm:text-base font-medium rounded-r-lg transition-all duration-300 ${
               bookingType === 'hourly' ? 'bg-gradient-to-r from-[#2b6cb0] to-[#3182ce] text-white' : 'bg-white text-gray-700'
-            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700`}
+            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:bg-proj focus:text-white`}
             onClick={() => setBookingType('hourly')}
           >
             Hourly Booking

@@ -9,58 +9,84 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-md">
-      <div className="max-w-screen-xl px-4 mx-auto">
-        <div className="flex items-center justify-between py-3">
-          <Link to="/home" className="flex items-center">
-            <h1 className="text-2xl font-bold text-transparent sm:text-3xl bg-proj bg-clip-text font-body">EasyStay</h1>
-          </Link>
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <Link to="/Login">
-              <button className="px-3 py-1 text-sm text-white transition-transform duration-200 ease-in-out rounded-lg sm:px-4 sm:py-2 sm:text-base bg-proj hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300">
+    <nav className="bg-white border-b border-gray-200 shadow-sm">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/home" className="flex-shrink-0">
+              <h1 className="text-2xl font-bold text-transparent bg-proj bg-clip-text lg:text-3xl">EasyStay</h1>
+            </Link>
+          </div>
+          
+          {/* Desktop Navigation Items */}
+          <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
+            <NavItem to="/signup" text="Get Franchise" />
+            <NavItem to="/pro" text="PRO" />
+            <NavItem to="/faq" text="FAQ" />
+            <NavItem to="/support" text="24/7 Support" />
+          </div>
+          
+          {/* Login, Sign Up buttons and Mobile Menu Toggle */}
+          <div className="flex items-center">
+            <Link to="/login">
+              <button className="px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out transform rounded-md bg-proj hover:bg-proj-hover focus:outline-none focus:ring-4 focus:ring-blue-300 active:ring-blue-500 focus:ring-opacity-50 active:scale-95 active:animate-pulse">
                 Login
               </button>
             </Link>
-            <Link to="/signup">
-              <button className="px-3 py-1 text-sm text-white transition-transform duration-200 ease-in-out rounded-lg sm:px-4 sm:py-2 sm:text-base bg-proj hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <Link to="/signup" className="ml-2 sm:ml-4">
+              <button className="px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out transform rounded-md bg-proj hover:bg-proj-hover focus:outline-none focus:ring-4 focus:ring-blue-300 active:ring-blue-500 focus:ring-opacity-50 active:scale-95 active:animate-pulse">
                 Sign Up
               </button>
             </Link>
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="inline-flex items-center justify-center p-2 ml-4 text-gray-400 rounded-md sm:hidden hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             >
               <span className="sr-only">Open main menu</span>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
       </div>
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <ul className="flex flex-col px-2 py-3 space-y-1">
-          <NavItem to="/signup" text="Get Franchise" />
-          <NavItem to="/pro" text="PRO" />
-          <NavItem to="/faq" text="FAQ" />
-          <NavItem to="/support" text="24/7 Support" />
-        </ul>
+
+      {/* Mobile menu */}
+      <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <MobileNavItem to="/signup" text="Get Franchise" />
+          <MobileNavItem to="/pro" text="PRO" />
+          <MobileNavItem to="/faq" text="FAQ" />
+          <MobileNavItem to="/support" text="24/7 Support" />
+        </div>
       </div>
     </nav>
   );
 }
 
+// Desktop Navigation Item Component
 function NavItem({ to, text }) {
   return (
-    <li>
-      <Link 
-        to={to} 
-        className="block px-3 py-2 text-base text-gray-900 transition-colors duration-200 rounded hover:bg-gray-100"
-      >
-        {text}
-      </Link>
-    </li>
+    <Link
+      to={to}
+      className="px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:bg-gray-50 hover:text-gray-900"
+    >
+      {text}
+    </Link>
+  );
+}
+
+// Mobile Navigation Item Component
+function MobileNavItem({ to, text }) {
+  return (
+    <Link
+      to={to}
+      className="block px-3 py-2 text-lg font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+    >
+      {text}
+    </Link>
   );
 }
 

@@ -15,7 +15,7 @@ const HotelList = ({ location, hotels }) => {
   return (
     <div className="bg-white">
       <div className="max-w-2xl px-4 py-16 mx-auto sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="mb-6 text-2xl font-extrabold text-gray-900">Hotels in {location}</h2>
+        <h2 className="mb-6 text-2xl font-semibold text-transparent bg-proj bg-clip-text">Hotels in {location}</h2>
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {hotels.map((hotel) => (
             <div
