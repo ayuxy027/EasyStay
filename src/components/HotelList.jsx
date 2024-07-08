@@ -23,7 +23,7 @@ const HotelList = ({ location, hotels }) => {
               className="cursor-pointer group"
               onClick={() => handleHotelClick(hotel)}
             >
-              <div className="w-full overflow-hidden bg-gray-200 rounded-lg aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8">
+              <div className="w-full overflow-hidden bg-gray-200 rounded-lg aspect-w-1 aspect-h-1">
                 <img
                   src={hotel.imageSrc}
                   alt={hotel.name}

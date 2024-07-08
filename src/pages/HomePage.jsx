@@ -30,7 +30,7 @@ const HomePage = () => {
       {
         id: 1,
         name: 'Pine Valley Lodge',
-        price: '₹4,000 per night',
+        price: '₹3,500 per Night',
         imageSrc: hotel1,
         description: 'Affordable comfort in the heart of the city. Perfect for budget-conscious travelers.',
         amenities: ['Free Wifi', 'Subtle Services'],
@@ -38,7 +38,7 @@ const HomePage = () => {
       {
         id: 2,
         name: 'Harbor View Hotel',
-        price: '₹6,000 per night',
+        price: '₹4,500 per Night',
         imageSrc: hotel2,
         description: 'Stay in the heart of the action with easy access to shopping, dining, and entertainment.',
         amenities: ['Free Wifi', 'Fitness Center', 'Restaurant'],
@@ -46,16 +46,16 @@ const HomePage = () => {
       {
         id: 3,
         name: 'Urban Oasis Hotel',
-        price: '₹8,000 per night',
-        imageSrc: hotel11,
+        price: '₹6,000 per Night',
+        imageSrc: hotel6,
         description: 'Relax and unwind in our beachfront resort with stunning ocean views and private beach access.',
         amenities: ['Free Wifi', 'Swimming Pool', 'Bar', 'Restaurant'],
       },
       {
         id: 4,
         name: 'Grand Horizon Hotel',
-        price: '₹11,500 per night',
-        imageSrc: hotel4,
+        price: '₹8,500 per Night',
+        imageSrc: hotel8,
         description: 'Experience luxury like never before in our 5-star hotel with breathtaking views and world-class amenities.',
         amenities: ['Free Wifi', 'Restaurant', 'Fitness Center', 'Swimming Pool'],
       },
