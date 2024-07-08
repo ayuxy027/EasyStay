@@ -12,6 +12,13 @@ import hotel1 from '../images/Hotels/hotel1.jpg';
 import hotel2 from '../images/Hotels/hotel2.jpg';
 import hotel3 from '../images/Hotels/hotel3.jpg';
 import hotel4 from '../images/Hotels/hotel4.jpg';
+import hotel5 from '../images/Hotels/hotel5.jpg';
+import hotel6 from '../images/Hotels/hotel6.jpg';
+import hotel7 from '../images/Hotels/hotel7.jpg';
+import hotel8 from '../images/Hotels/hotel8.jpg';
+import hotel9 from '../images/Hotels/hotel9.jpg';
+import hotel10 from '../images/Hotels/hotel10.jpg';
+import hotel11 from '../images/Hotels/hotel11.jpg';
 
 const HomePage = () => {
   const [searchResults, setSearchResults] = useState(null);
@@ -22,38 +29,38 @@ const HomePage = () => {
     const mockHotels = [
       {
         id: 1,
-        name: 'Luxury Hotel',
-        price: '$200 per night',
+        name: 'Pine Valley Lodge',
+        price: '₹4,000 per night',
         imageSrc: hotel1,
-        description: 'Experience luxury like never before in our 5-star hotel with breathtaking views and world-class amenities.',
-        amenities: ['Free Wi-Fi', 'Swimming Pool', 'Spa', 'Fitness Center', 'Restaurant'],
+        description: 'Affordable comfort in the heart of the city. Perfect for budget-conscious travelers.',
+        amenities: ['Free Wifi', 'Subtle Services'],
       },
       {
         id: 2,
-        name: 'Budget Inn',
-        price: '$80 per night',
+        name: 'Harbor View Hotel',
+        price: '₹6,000 per night',
         imageSrc: hotel2,
-        description: 'Affordable comfort in the heart of the city. Perfect for budget-conscious travelers.',
-        amenities: ['Free Wi-Fi', 'Continental Breakfast', 'Parking'],
+        description: 'Stay in the heart of the action with easy access to shopping, dining, and entertainment.',
+        amenities: ['Free Wifi', 'Fitness Center', 'Restaurant'],
       },
       {
         id: 3,
-        name: 'Seaside Resort',
-        price: '$150 per night',
-        imageSrc: hotel3,
+        name: 'Urban Oasis Hotel',
+        price: '₹8,000 per night',
+        imageSrc: hotel11,
         description: 'Relax and unwind in our beachfront resort with stunning ocean views and private beach access.',
-        amenities: ['Private Beach', 'Swimming Pool', 'Water Sports', 'Beachside Restaurant'],
+        amenities: ['Free Wifi', 'Swimming Pool', 'Bar', 'Restaurant'],
       },
       {
         id: 4,
-        name: 'City Center Hotel',
-        price: '$120 per night',
+        name: 'Grand Horizon Hotel',
+        price: '₹11,500 per night',
         imageSrc: hotel4,
-        description: 'Stay in the heart of the action with easy access to shopping, dining, and entertainment.',
-        amenities: ['Free Wi-Fi', 'Business Center', 'Fitness Room', 'On-site Restaurant'],
+        description: 'Experience luxury like never before in our 5-star hotel with breathtaking views and world-class amenities.',
+        amenities: ['Free Wifi', 'Restaurant', 'Fitness Center', 'Swimming Pool'],
       },
     ];
-
+    
     setSearchResults({
       location: searchData.location,
       hotels: mockHotels,
