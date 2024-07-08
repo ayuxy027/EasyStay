@@ -1,12 +1,17 @@
 // src/pages/HomePage.jsx
-import React, { useState } from 'react'
-import SearchBar from '../components/SearchBar'
-import Hero from '../components/Hero'
-import Destination from '../components/Destination'
-import Services from '../components/Services'
-import Feedback from '../components/Feedback'
-import Navbar from '../components/NavBar'
-import HotelList from '../components/HotelList'
+import React, { useState } from 'react';
+import SearchBar from '../components/SearchBar';
+import Hero from '../components/Hero';
+import Destination from '../components/Destination';
+import Services from '../components/Services';
+import Feedback from '../components/Feedback';
+import Navbar from '../components/NavBar';
+import HotelList from '../components/HotelList';
+
+import hotel1 from '../images/Hotels/hotel1.jpg';
+import hotel2 from '../images/Hotels/hotel2.jpg';
+import hotel3 from '../images/Hotels/hotel3.jpg';
+import hotel4 from '../images/Hotels/hotel4.jpg';
 
 const HomePage = () => {
   const [searchResults, setSearchResults] = useState(null);
@@ -19,7 +24,7 @@ const HomePage = () => {
         id: 1,
         name: 'Luxury Hotel',
         price: '$200 per night',
-        imageSrc: 'https://example.com/hotel1.jpg',
+        imageSrc: hotel1,
         description: 'Experience luxury like never before in our 5-star hotel with breathtaking views and world-class amenities.',
         amenities: ['Free Wi-Fi', 'Swimming Pool', 'Spa', 'Fitness Center', 'Restaurant'],
       },
@@ -27,7 +32,7 @@ const HomePage = () => {
         id: 2,
         name: 'Budget Inn',
         price: '$80 per night',
-        imageSrc: 'https://example.com/hotel2.jpg',
+        imageSrc: hotel2,
         description: 'Affordable comfort in the heart of the city. Perfect for budget-conscious travelers.',
         amenities: ['Free Wi-Fi', 'Continental Breakfast', 'Parking'],
       },
@@ -35,7 +40,7 @@ const HomePage = () => {
         id: 3,
         name: 'Seaside Resort',
         price: '$150 per night',
-        imageSrc: 'https://example.com/hotel3.jpg',
+        imageSrc: hotel3,
         description: 'Relax and unwind in our beachfront resort with stunning ocean views and private beach access.',
         amenities: ['Private Beach', 'Swimming Pool', 'Water Sports', 'Beachside Restaurant'],
       },
@@ -43,7 +48,7 @@ const HomePage = () => {
         id: 4,
         name: 'City Center Hotel',
         price: '$120 per night',
-        imageSrc: 'https://example.com/hotel4.jpg',
+        imageSrc: hotel4,
         description: 'Stay in the heart of the action with easy access to shopping, dining, and entertainment.',
         amenities: ['Free Wi-Fi', 'Business Center', 'Fitness Room', 'On-site Restaurant'],
       },
@@ -58,16 +63,16 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <Hero/>
-      <SearchBar onSearch={handleSearch}/>
+      <Hero />
+      <SearchBar onSearch={handleSearch} />
       {searchResults && (
         <HotelList location={searchResults.location} hotels={searchResults.hotels} />
       )}
-      <Destination/>
+      <Destination />
       <Services />
       <Feedback />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
