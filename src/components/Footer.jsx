@@ -3,121 +3,82 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaQuora, FaPinterest, FaGooglePlay, FaApple } from 'react-icons/fa';
 
 const Footer = () => {
-  const handleLinkClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div className="flex flex-col items-center w-full text-white bg-blue-900">
-      <div className="flex flex-wrap justify-around w-full py-10 text-center border-b border-blue-700">
-        <div className="mt-8 text-left">
-          <h2 className="text-4xl font-bold">Easy Stay</h2>
-          <p className="mt-6 text-lg">
+    <footer className="w-full px-4 py-8 text-white bg-blue-900 md:px-8 lg:px-16">
+      <div className="grid grid-cols-2 gap-8 mb-8 sm:grid-cols-2 md:grid-cols-4">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Easy Stay</h2>
+          <p className="text-sm">
             Pune, <br />
             Maharashtra, 411001
           </p>
         </div>
 
-        <div className="mt-8 text-left">
-          <h3 className="text-xl font-bold">Our Services</h3>
-          <div className="text-lg leading-8">
-            <p>
-              <Link to="/about" className="hover:underline" onClick={handleLinkClick}>
-                About Us <br />
-              </Link>
-              <Link to="/career" className="hover:underline" onClick={handleLinkClick}>
-                Careers <br />
-              </Link>
-              Blog <br />
-              <Link to="/holidays" className="hover:underline" onClick={handleLinkClick}>
-                Holiday Package <br />
-              </Link>
-              Group booking <br />
-            </p>
-          </div>
-        </div>
-        <div className="mt-8 text-left">
-          <h3 className="text-xl font-bold">Partnership with us</h3>
-          <div className="text-lg leading-8">
-            <p>
-              <Link to="/franchise" className="hover:underline">
-                Get Franchise <br />
-              </Link>
-              Travel Agent <br />
-              <Link to="/corporates" className="hover:underline">
-                Corporate Enquiries <br />
-              </Link>
-              Flight <br />
-              Transport
-            </p>
-          </div>
+        <div>
+          <h3 className="mb-4 text-lg font-semibold sm:text-xl">Our Services</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/about" className="hover:underline">About Us</Link></li>
+            <li><Link to="/careers" className="hover:underline">Careers</Link></li>
+            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/holidays" className="hover:underline">Holiday Package</Link></li>
+            <li><Link to="/group-booking" className="hover:underline">Group booking</Link></li>
+          </ul>
         </div>
 
-        <div className="mt-8 text-left">
-          <h3 className="text-xl font-bold">Policies</h3>
-          <div className="text-lg leading-8">
-            <p>
-              <Link to="/faq" className="hover:underline" onClick={handleLinkClick}>
-                FAQ <br />
-              </Link>
-              <Link to="/support" className="hover:underline">
-                Contact Us <br />
-              </Link>
-              <Link to="/refund-policy" className="hover:underline" onClick={handleLinkClick}>
-                Cancellation & Refund Policy <br />
-              </Link>
-              <Link to="/privacy-policy" className="hover:underline" onClick={handleLinkClick}>
-                Privacy Policy <br />
-              </Link>
-              <Link to="/terms-and-conditions" className="hover:underline">
-                Terms & Conditions
-              </Link>
-            </p>
+        <div>
+          <h3 className="mb-4 text-lg font-semibold sm:text-xl">Partnership with us</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/franchise" className="hover:underline">Get Franchise</Link></li>
+            <li><Link to="/travel-agent" className="hover:underline">Travel Agent</Link></li>
+            <li><Link to="/corporate" className="hover:underline">Corporate Enquiries</Link></li>
+            <li><Link to="/flight" className="hover:underline">Flight</Link></li>
+            <li><Link to="/transport" className="hover:underline">Transport</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-lg font-semibold sm:text-xl">Policies</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact Us</Link></li>
+            <li><Link to="/refund-policy" className="hover:underline">Cancellation & Refund Policy</Link></li>
+            <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:underline">Terms & Conditions</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="pt-8 border-t border-blue-800">
+        <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
+          <div>
+            <h4 className="mb-4 text-xl font-semibold">Follow Us</h4>
+            <div className="flex space-x-4">
+              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaQuora, FaPinterest].map((Icon, index) => (
+                <a key={index} href="#" className="text-white transition-colors hover:text-blue-300">
+                  <Icon size={24} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center sm:text-right">
+            <h4 className="mb-4 text-xl font-semibold">Book Hotels Faster: Download our app</h4>
+            <div className="flex justify-center space-x-4 sm:justify-end">
+              <a href="#" className="p-2 transition-colors bg-gray-700 rounded-lg hover:bg-gray-600">
+                <FaGooglePlay size={24} />
+              </a>
+              <a href="#" className="p-2 transition-colors bg-gray-700 rounded-lg hover:bg-gray-600">
+                <FaApple size={24} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-around w-full gap-8 px-10 mx-auto mt-4">
-        <div className="flex-1 text-center">
-          <h3 className="text-xl font-bold">Follow Us</h3>
-          <div className="flex justify-center gap-4 mt-5">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF className="text-2xl" />
-            </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-2xl" />
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn className="text-2xl" />
-            </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-              <FaYoutube className="text-2xl" />
-            </a>
-            <a href="https://www.quora.com" target="_blank" rel="noopener noreferrer">
-              <FaQuora className="text-2xl" />
-            </a>
-            <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
-              <FaPinterest className="text-2xl" />
-            </a>
-          </div>
-        </div>
-        <div className="flex-1 text-center">
-          <h3 className="text-xl font-bold">Book Hotels Faster: Download our app</h3>
-          <div className="flex justify-center gap-4 mt-5">
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-700 rounded-lg">
-              <FaGooglePlay className="text-3xl" />
-            </a>
-            <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-700 rounded-lg">
-              <FaApple className="text-3xl" />
-            </a>
-          </div>
-        </div>
+      <div className="mt-8 text-sm text-center">
+        © 2024 All Rights Reserved
       </div>
-
-      <div className="w-full py-4">
-        <h4 className="text-center">© 2024 All Rights Reserved</h4>
-      </div>
-    </div>
+    </footer>
   );
 };
 
