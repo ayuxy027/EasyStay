@@ -4,7 +4,19 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './css/datepicker.css';
 
-function SearchBar() {
+const destinations = [
+  { name: 'Mumbai', state: 'Maharashtra' },
+  { name: 'Agra', state: 'Uttar Pradesh' },
+  { name: 'Ooty', state: 'Tamil Nadu' },
+  { name: 'Panjim', state: 'Goa' },
+  { name: 'Kolkata', state: 'West Bengal' },
+  { name: 'Shimla', state: 'Himachal Pradesh' },
+  { name: 'Jaipur', state: 'Rajasthan' },
+  { name: 'Manali', state: 'Himachal Pradesh' },
+  { name: 'Bhubaneshwar', state: 'Odisha' },
+];
+
+function SearchBar({ onSearch }) {
   const [bookingType, setBookingType] = useState('daily');
   const [location, setLocation] = useState('');
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
@@ -78,17 +90,17 @@ function SearchBar() {
       setErrorMessage('Please select a location.');
       return;
     }
-
+  
     if (bookingType === 'daily' && (!checkinDate || !checkoutDate)) {
       setErrorMessage('Please select both Check-In and Check-Out dates.');
       return;
     }
-
+  
     if (bookingType === 'hourly' && (!checkinTime || !checkoutTime)) {
       setErrorMessage('Please select both Check-In and Check-Out times.');
       return;
     }
-
+  
     setErrorMessage('');
     const searchData = {
       bookingType,
@@ -100,18 +112,7 @@ function SearchBar() {
       adults,
       children
     };
-    console.log('Searching with data:', searchData);
-    // Send searchData to the backend
-    fetch('/api/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(searchData)
-    })
-    .then(response => response.json())
-    .then(data => console.log('Success:', data))
-    .catch((error) => console.error('Error:', error));
+    onSearch(searchData);
   };
 
   return (
@@ -155,16 +156,16 @@ function SearchBar() {
           />
           {showLocationDropdown && (
             <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 shadow-lg rounded-xl">
-              {['New York', 'Los Angeles', 'Chicago'].map((loc) => (
+              {destinations.map((dest) => (
                 <div
-                  key={loc}
+                  key={dest.name}
                   className="p-3 transition-all duration-200 cursor-pointer hover:bg-gray-100"
                   onClick={() => {
-                    setLocation(loc);
+                    setLocation(dest.name);
                     setShowLocationDropdown(false);
                   }}
                 >
-                  {loc}
+                  {dest.name}, {dest.state}
                 </div>
               ))}
             </div>
