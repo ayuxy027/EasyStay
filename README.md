@@ -4,8 +4,10 @@ Welcome to **Easy Stay** 🏡
 ## Project Overview
 
 **Easy Stay** is a hotel booking application built with **React**, **Vite**, and **Tailwind CSS** 👀
+
 This project is designed to be **100% Mobile Phone Responsive**, offering a seamless experience across all devices ↗️
-Our USP is that we **break the stereotype** of normal day-to-day bookings by offering an **hourly booking system** 🏄🏻
+
+Our USP is that we **Break the Stereotype** of normal day-to-day bookings by offering an **Hourly Booking System** 🏄🏻
 
 ## Tech Stack
 
@@ -46,7 +48,7 @@ Our USP is that we **break the stereotype** of normal day-to-day bookings by off
 
 **Contributions are welcomed** 😁
 
-Please respect the following:
+Let's keep the spirit of open source alive!
 
 ### Hey!
 
@@ -58,6 +60,7 @@ Just a few things to keep in mind:
 - Creating something from scratch takes a lot of hard work, and I hope you respect that 😄
 - If you have any questions or need permission for something specific, feel free to reach out to me at [ayush421301@gmail.com](mailto:ayush421301@gmail.com).
 
+
 ## Contact
 
-For any inquiries or suggestions, please reach out to me at [ayush421301@gmail.com](mailto:ayush421301@gmail.com).
+If you have any enquiries or suggestions, please reach out to me at [ayush421301@gmail.com](mailto:ayush421301@gmail.com) or ping me here [Twitter](https://x.com/ayuxy027).
