@@ -6,7 +6,7 @@ const HotelDetails = ({ hotel, onClose }) => {
       <div className="w-full max-w-4xl overflow-hidden bg-white rounded-lg shadow-xl">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">{hotel.name}</h2>
+            <h2 className="text-2xl font-bold text-transparent bg-proj-hover bg-clip-text">{hotel.name}</h2>
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -29,13 +29,13 @@ const HotelDetails = ({ hotel, onClose }) => {
               ))}
             </ul>
             <h3>Price</h3>
-            <p className="text-xl font-bold text-indigo-600">{hotel.price} per night</p>
+            <p className="text-xl font-bold text-transparent bg-proj bg-clip-text">{hotel.price}</p>
           </div>
         </div>
         <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
           <button
             onClick={onClose}
-            className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="flex items-center justify-center max-w-[400px] px-8 py-3 text-base font-medium text-white border border-transparent rounded-md bg-proj hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Close
           </button>
