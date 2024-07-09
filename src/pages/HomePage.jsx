@@ -33,7 +33,12 @@ const HomePage = () => {
         price: '₹3,500 per Night',
         imageSrc: hotel1,
         description: 'Affordable comfort in the heart of the city. Perfect for budget-conscious travelers.',
-        amenities: ['Free Wifi', 'Subtle Services'],
+        amenities: ['Free Wifi', 'Coffee Shop', 'Parking'],
+        rating: 3,
+        reviews: [
+          { text: "Great value for money. Clean and comfortable.", author: "John D." },
+          { text: "Good location, but basic amenities.", author: "Sarah M." },
+        ],
       },
       {
         id: 2,
@@ -41,7 +46,12 @@ const HomePage = () => {
         price: '₹4,500 per Night',
         imageSrc: hotel2,
         description: 'Stay in the heart of the action with easy access to shopping, dining, and entertainment.',
-        amenities: ['Free Wifi', 'Fitness Center', 'Restaurant'],
+        amenities: ['Free Wifi', 'Fitness Center', 'Restaurant', 'Bar'],
+        rating: 4,
+        reviews: [
+          { text: "Wonderful stay! Great views and friendly staff.", author: "Emily R." },
+          { text: "Perfect location for exploring the city.", author: "Michael T." },
+        ],
       },
       {
         id: 3,
@@ -49,7 +59,12 @@ const HomePage = () => {
         price: '₹6,000 per Night',
         imageSrc: hotel6,
         description: 'Relax and unwind in our beachfront resort with stunning ocean views and private beach access.',
-        amenities: ['Free Wifi', 'Swimming Pool', 'Bar', 'Restaurant'],
+        amenities: ['Free Wifi', 'Swimming Pool', 'Bar', 'Restaurant', 'Spa', 'Concierge'],
+        rating: 4,
+        reviews: [
+          { text: "Amazing beachfront location. The spa was incredible!", author: "Lisa K." },
+          { text: "Luxurious rooms and excellent service.", author: "David W." },
+        ],
       },
       {
         id: 4,
@@ -57,10 +72,15 @@ const HomePage = () => {
         price: '₹8,500 per Night',
         imageSrc: hotel8,
         description: 'Experience luxury like never before in our 5-star hotel with breathtaking views and world-class amenities.',
-        amenities: ['Free Wifi', 'Restaurant', 'Fitness Center', 'Swimming Pool'],
+        amenities: ['Free Wifi', 'Restaurant', 'Fitness Center', 'Swimming Pool', 'Spa', 'Business Center', 'Room Service', 'Airport Shuttle'],
+        rating: 5,
+        reviews: [
+          { text: "Absolutely stunning! The epitome of luxury.", author: "Jennifer L." },
+          { text: "Impeccable service and attention to detail. Worth every penny.", author: "Robert S." },
+        ],
       },
     ];
-    
+
     setSearchResults({
       location: searchData.location,
       hotels: mockHotels,

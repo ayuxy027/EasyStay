@@ -1,43 +1,78 @@
 import React, { useState } from 'react';
 import HotelDetails from './HotelDetails';
+import { FaStar } from 'react-icons/fa';
 
 const HotelList = ({ location, hotels }) => {
   const [selectedHotel, setSelectedHotel] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleHotelClick = (hotel) => {
+  const handleHotelClick = (hotel, index) => {
     setSelectedHotel(hotel);
+    setSelectedIndex(index);
   };
 
   const handleCloseModal = () => {
     setSelectedHotel(null);
   };
 
+  const handlePrevious = () => {
+    const newIndex = (selectedIndex - 1 + hotels.length) % hotels.length;
+    setSelectedHotel(hotels[newIndex]);
+    setSelectedIndex(newIndex);
+  };
+
+  const handleNext = () => {
+    const newIndex = (selectedIndex + 1) % hotels.length;
+    setSelectedHotel(hotels[newIndex]);
+    setSelectedIndex(newIndex);
+  };
+
+  const handleBook = () => {
+    console.log('Booking', selectedHotel.name);
+  };
+
+  const renderStars = (rating) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <FaStar key={index} className={index < rating ? "text-yellow-400" : "text-gray-300"} />
+    ));
+  };
+
   return (
-    <div className="bg-white">
-      <div className="max-w-2xl px-4 py-16 mx-auto sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="mb-6 text-2xl font-semibold text-transparent bg-proj bg-clip-text">Hotels in {location}</h2>
-        <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {hotels.map((hotel) => (
+    <div className="min-h-screen py-12 bg-gray-100">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-3xl font-bold text-gray-900">Hotels in {location}</h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {hotels.map((hotel, index) => (
             <div
               key={hotel.id}
-              className="cursor-pointer group"
-              onClick={() => handleHotelClick(hotel)}
+              className="overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-md cursor-pointer hover:scale-105"
+              onClick={() => handleHotelClick(hotel, index)}
             >
-              <div className="w-full overflow-hidden bg-gray-200 rounded-lg aspect-w-1 aspect-h-1">
-                <img
-                  src={hotel.imageSrc}
-                  alt={hotel.name}
-                  className="object-cover object-center w-full h-full group-hover:opacity-75"
-                />
+              <img
+                src={hotel.imageSrc}
+                alt={hotel.name}
+                className="object-cover w-full h-48"
+              />
+              <div className="p-4">
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">{hotel.name}</h3>
+                <div className="flex items-center mb-2">
+                  {renderStars(hotel.rating)}
+                  <span className="ml-2 text-sm text-gray-600">{hotel.rating}/5</span>
+                </div>
+                <p className="font-bold text-proj">{hotel.price}</p>
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">{hotel.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">{hotel.price}</p>
             </div>
           ))}
         </div>
       </div>
       {selectedHotel && (
-        <HotelDetails hotel={selectedHotel} onClose={handleCloseModal} />
+        <HotelDetails
+          hotel={selectedHotel}
+          onClose={handleCloseModal}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          onBook={handleBook}
+        />
       )}
     </div>
   );
