@@ -40,12 +40,12 @@ const HotelList = ({ location, hotels }) => {
   return (
     <div className="min-h-screen py-12 bg-gray-100">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 className="mb-8 text-3xl font-bold text-gray-900">Hotels in {location}</h2>
+        <h2 className="mb-8 text-3xl font-normal text-transparent bg-proj-hover bg-clip-text">Hotels in {location}</h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {hotels.map((hotel, index) => (
             <div
               key={hotel.id}
-              className="overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-md cursor-pointer hover:scale-105"
+              className="overflow-hidden transition-transform bg-white rounded-lg shadow-md cursor-pointer duration-400 hover:scale-105"
               onClick={() => handleHotelClick(hotel, index)}
             >
               <img
@@ -54,12 +54,12 @@ const HotelList = ({ location, hotels }) => {
                 className="object-cover w-full h-48"
               />
               <div className="p-4">
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">{hotel.name}</h3>
+                <h3 className="mb-2 text-xl font-normal text-gray-900">{hotel.name}</h3>
                 <div className="flex items-center mb-2">
                   {renderStars(hotel.rating)}
                   <span className="ml-2 text-sm text-gray-600">{hotel.rating}/5</span>
                 </div>
-                <p className="font-bold text-proj">{hotel.price}</p>
+                <p className="font-semibold text-proj">{hotel.price}</p>
               </div>
             </div>
           ))}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaSearch, FaCalendarAlt, FaUser, FaClock } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -28,6 +28,25 @@ function SearchBar({ onSearch }) {
   const [children, setChildren] = useState(0);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const locationRef = useRef(null);
+  const guestRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (locationRef.current && !locationRef.current.contains(event.target)) {
+        setShowLocationDropdown(false);
+      }
+      if (guestRef.current && !guestRef.current.contains(event.target)) {
+        setShowGuestDropdown(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleGuestChange = (type, action) => {
     if (type === 'adults') {
@@ -72,11 +91,11 @@ function SearchBar({ onSearch }) {
       if (checkinTime) {
         const checkinDateTime = new Date(checkinTime);
         const checkoutDateTime = new Date(time);
-        
+
         if (checkoutDateTime <= checkinDateTime) {
           checkoutDateTime.setDate(checkoutDateTime.getDate() + 1);
         }
-        
+
         setCheckoutTime(checkoutDateTime);
         setErrorMessage('');
       } else {
@@ -90,17 +109,17 @@ function SearchBar({ onSearch }) {
       setErrorMessage('Please select a location.');
       return;
     }
-  
+
     if (bookingType === 'daily' && (!checkinDate || !checkoutDate)) {
       setErrorMessage('Please select both Check-In and Check-Out dates.');
       return;
     }
-  
+
     if (bookingType === 'hourly' && (!checkinTime || !checkoutTime)) {
       setErrorMessage('Please select both Check-In and Check-Out times.');
       return;
     }
-  
+
     setErrorMessage('');
     const searchData = {
       bookingType,
@@ -116,23 +135,25 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div className="w-full max-w-[1200px] p-6 sm:p-10 mx-auto mt-10 bg-white shadow-xl rounded-3xl">
-      <div className="flex justify-center mb-8">
+    <div className="w-full p-4 mx-auto mt-4 bg-white shadow-lg sm:p-6 md:p-8 max-w-7xl rounded-2xl">
+      <div className="flex justify-center mb-6">
         <div className="inline-flex rounded-md shadow-sm" role="group">
           <button
             type="button"
-            className={`px-3 sm:px-4 py-2 sm:py-2 text-sm sm:text-base font-medium rounded-l-lg transition-all duration-300 ${
-              bookingType === 'daily' ? 'bg-gradient-to-r from-[#2b6cb0] to-[#3182ce] text-white' : 'bg-white text-gray-700'
-            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2`}
+            className={`px-4 py-2 text-sm font-medium rounded-l-lg transition-all duration-300 sm:px-6 sm:py-3 sm:text-base ${bookingType === 'daily'
+                ? 'bg-proj text-white'
+                : 'bg-white hover:bg-gray-50'
+              } border border-gray-200 focus:z-10 focus:ring-2 focus:ring-proj`}
             onClick={() => setBookingType('daily')}
           >
             Daily Booking
           </button>
           <button
             type="button"
-            className={`px-3 sm:px-4 py-2 sm:py-2 text-sm sm:text-base font-medium rounded-r-lg transition-all duration-300 ${
-              bookingType === 'hourly' ? 'bg-gradient-to-r from-[#2b6cb0] to-[#3182ce] text-white' : 'bg-white text-gray-700'
-            } border border-gray-200 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:bg-proj focus:text-white`}
+            className={`px-4 py-2 text-sm font-medium rounded-r-lg transition-all duration-300 sm:px-6 sm:py-3 sm:text-base ${bookingType === 'hourly'
+                ? 'bg-proj text-white'
+                : 'bg-white hover:bg-gray-50'
+              } border border-gray-200 focus:z-10 focus:ring-2 focus:ring-proj`}
             onClick={() => setBookingType('hourly')}
           >
             Hourly Booking
@@ -140,26 +161,26 @@ function SearchBar({ onSearch }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-stretch gap-6 lg:flex-row">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6">
         {/* Location Input */}
-        <div className="relative flex-1">
-          <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-            <FaSearch className="mr-3 text-[#2b6cb0]" /> Location
+        <div className="relative" ref={locationRef}>
+          <label className="block mb-2 text-sm font-semibold text-gray-700">
+            <FaSearch className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Location
           </label>
           <input
             type="text"
-            className="w-full p-3 text-lg border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
-            placeholder="Search location"
+            className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
+            placeholder="Enter location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             onClick={() => setShowLocationDropdown(true)}
           />
           {showLocationDropdown && (
-            <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 shadow-lg rounded-xl">
+            <div className="absolute z-10 w-full mt-1 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-lg max-h-48">
               {destinations.map((dest) => (
                 <div
                   key={dest.name}
-                  className="p-3 transition-all duration-200 cursor-pointer hover:bg-gray-100"
+                  className="p-2 text-sm cursor-pointer sm:text-base hover:bg-gray-100"
                   onClick={() => {
                     setLocation(dest.name);
                     setShowLocationDropdown(false);
@@ -175,9 +196,9 @@ function SearchBar({ onSearch }) {
         {bookingType === 'daily' ? (
           <>
             {/* Check-in Date */}
-            <div className="relative flex-1">
-              <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-                <FaCalendarAlt className="mr-3 text-[#2b6cb0]" /> Check-in
+            <div className="relative">
+              <label className="block mb-2 text-sm font-semibold text-gray-700">
+                <FaCalendarAlt className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Check-in
               </label>
               <DatePicker
                 selected={checkinDate}
@@ -187,14 +208,14 @@ function SearchBar({ onSearch }) {
                 endDate={checkoutDate}
                 minDate={new Date()}
                 placeholderText="Select Check-in Date"
-                className="w-full p-3 text-lg border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
+                className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
               />
             </div>
 
             {/* Check-out Date */}
-            <div className="relative flex-1">
-              <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-                <FaCalendarAlt className="mr-3 text-[#2b6cb0]" /> Check-out
+            <div className="relative">
+              <label className="block mb-2 text-sm font-semibold text-gray-700">
+                <FaCalendarAlt className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Check-out
               </label>
               <DatePicker
                 selected={checkoutDate}
@@ -204,16 +225,16 @@ function SearchBar({ onSearch }) {
                 endDate={checkoutDate}
                 minDate={checkinDate}
                 placeholderText="Select Check-out Date"
-                className="w-full p-3 text-lg border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
+                className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
               />
             </div>
           </>
         ) : (
           <>
             {/* Check-in Time */}
-            <div className="relative flex-1">
-              <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-                <FaClock className="mr-3 text-[#2b6cb0]" /> Check-in Time
+            <div className="relative">
+              <label className="block mb-2 text-sm font-semibold text-gray-700">
+                <FaClock className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Check-in Time
               </label>
               <DatePicker
                 selected={checkinTime}
@@ -224,14 +245,14 @@ function SearchBar({ onSearch }) {
                 timeCaption="Time"
                 dateFormat="h:mm aa"
                 placeholderText="Select Check-in Time"
-                className="w-full p-3 text-lg border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
+                className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
               />
             </div>
 
             {/* Check-out Time */}
-            <div className="relative flex-1">
-              <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-                <FaClock className="mr-3 text-[#2b6cb0]" /> Check-out Time
+            <div className="relative">
+              <label className="block mb-2 text-sm font-semibold text-gray-700">
+                <FaClock className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Check-out Time
               </label>
               <DatePicker
                 selected={checkoutTime}
@@ -242,37 +263,37 @@ function SearchBar({ onSearch }) {
                 timeCaption="Time"
                 dateFormat="h:mm aa"
                 placeholderText="Select Check-out Time"
-                className="w-full p-3 text-lg border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
+                className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
               />
             </div>
           </>
         )}
 
         {/* Guests Dropdown */}
-        <div className="relative flex-1">
-          <label className="flex items-center mb-3 ml-4 text-lg font-semibold text-gray-700">
-            <FaUser className="mr-3 text-[#2b6cb0]" /> Guests
+        <div className="relative" ref={guestRef}>
+          <label className="block mb-2 text-sm font-semibold text-gray-700">
+            <FaUser className="inline-block mr-2 text-transparent bg-proj bg-clip-text" /> Guests
           </label>
           <div
-            className="w-full p-3 text-lg border border-gray-300 rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#3182ce] transition-all duration-300"
+            className="w-full p-2 text-sm transition-all duration-300 border border-gray-300 rounded-lg cursor-pointer sm:p-3 sm:text-base focus:outline-none focus:ring-2 focus:ring-proj"
             onClick={() => setShowGuestDropdown(!showGuestDropdown)}
           >
             {adults} Adults, {children} Children
           </div>
           {showGuestDropdown && (
-            <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 shadow-lg rounded-xl">
-              <div className="flex items-center justify-between p-3">
-                <span>Adults</span>
-                <div className="flex items-center space-x-2">
+            <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div className="flex items-center justify-between p-3 border-b">
+                <span className="text-sm font-medium sm:text-base">Adults</span>
+                <div className="flex items-center space-x-3">
                   <button
-                    className="px-2 py-1 font-bold text-white bg-gray-400 rounded-full"
+                    className="px-2 py-1 text-sm font-medium text-white transition-colors duration-300 rounded-md sm:px-3 sm:py-1 sm:text-base bg-proj hover:bg-proj-hover"
                     onClick={() => handleGuestChange('adults', 'decrement')}
                   >
                     -
                   </button>
-                  <span>{adults}</span>
+                  <span className="w-8 text-sm font-semibold text-center sm:text-base">{adults}</span>
                   <button
-                    className="px-2 py-1 font-bold text-white bg-gray-400 rounded-full"
+                    className="px-2 py-1 text-sm font-medium text-white transition-colors duration-300 rounded-md sm:px-3 sm:py-1 sm:text-base bg-proj hover:bg-proj-hover"
                     onClick={() => handleGuestChange('adults', 'increment')}
                   >
                     +
@@ -280,17 +301,17 @@ function SearchBar({ onSearch }) {
                 </div>
               </div>
               <div className="flex items-center justify-between p-3">
-                <span>Children</span>
-                <div className="flex items-center space-x-2">
+                <span className="text-sm font-medium sm:text-base">Children</span>
+                <div className="flex items-center space-x-3">
                   <button
-                    className="px-2 py-1 font-bold text-white bg-gray-400 rounded-full"
+                    className="px-2 py-1 text-sm font-medium text-white transition-colors duration-300 rounded-md sm:px-3 sm:py-1 sm:text-base bg-proj hover:bg-proj-hover"
                     onClick={() => handleGuestChange('children', 'decrement')}
                   >
                     -
                   </button>
-                  <span>{children}</span>
+                  <span className="w-8 text-sm font-semibold text-center sm:text-base">{children}</span>
                   <button
-                    className="px-2 py-1 font-bold text-white bg-gray-400 rounded-full"
+                    className="px-2 py-1 text-sm font-medium text-white transition-colors duration-300 rounded-md sm:px-3 sm:py-1 sm:text-base bg-proj hover:bg-proj-hover"
                     onClick={() => handleGuestChange('children', 'increment')}
                   >
                     +
@@ -300,21 +321,20 @@ function SearchBar({ onSearch }) {
             </div>
           )}
         </div>
-
-        {/* Search Button */}
-        <div className="flex items-end justify-center w-full lg:w-auto lg:justify-end">
-          <button
-            className="flex items-center justify-center px-3 py-2 sm:px-6 sm:py-3 text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#2b6cb0] to-[#3182ce] rounded-xl hover:from-[#3182ce] hover:to-[#2b6cb0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2b6cb0]"
-            onClick={handleSearch}
-          >
-            <FaSearch className="mr-2 text-white" />
-            Search
-          </button>
-        </div>
+      </div>
+      {/* Search Button */}
+      <div className="mt-6 text-center sm:mt-8">
+        <button
+          className="w-full px-6 py-2 text-sm font-medium text-white transition-all duration-300 rounded-lg sm:w-auto sm:px-8 sm:py-3 sm:text-base bg-proj hover:bg-proj-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-proj"
+          onClick={handleSearch}
+        >
+          <FaSearch className="inline-block mr-2" />
+          Search
+        </button>
       </div>
 
       {errorMessage && (
-        <div className="mt-4 text-center text-red-500">{errorMessage}</div>
+        <div className="mt-4 text-sm text-center text-red-500 sm:text-base">{errorMessage}</div>
       )}
     </div>
   );
