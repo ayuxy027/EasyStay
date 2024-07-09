@@ -52,7 +52,7 @@ const HotelDetails = ({ hotel, onClose, onPrevious, onNext, onBook }) => {
           <div className="lg:w-1/2 lg:pl-6">
             <div className="mb-6">
               <h3 className="mb-4 text-2xl font-semibold text-gray-800">Amenities</h3>
-              <div className="grid grid-cols-3 gap-4 sm:grid-cols-4">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {hotel.amenities.map((amenity) => (
                   <div
                     key={amenity}
