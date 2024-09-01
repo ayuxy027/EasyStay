@@ -50,7 +50,7 @@ Our USP is that we **Break the Stereotype** of normal day-to-day bookings by off
 
 Let's keep the spirit of open source alive!
 
-### Hey!
+### Hey There!
 
 Thanks for checking out my project! 
 
