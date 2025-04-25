@@ -13,26 +13,26 @@
     "@auth0/auth0-react": "^2.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "framer-motion": "^12.7.3",
-    "lucide-react": "^0.488.0",
+    "framer-motion": "^12.9.1",
+    "lucide-react": "^0.503.0",
     "react": "^19.1.0",
     "react-datepicker": "^8.3.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.5.0"
+    "react-router-dom": "^7.5.2"
   },
   "devDependencies": {
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.0",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^9.24.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.25.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "postcss": "^8.4.38",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "postcss": "^8.5.3",
     "prettier": "3.5.3",
-    "tailwindcss": "^3.4.3",
-    "vite": "^6.2.6"
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.3.3"
   }
 }
